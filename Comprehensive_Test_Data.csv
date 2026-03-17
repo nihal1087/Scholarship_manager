@@ -1,0 +1,501 @@
+first_name,last_name,email,mobile,gender,dob,father,income,state,district,current_level,current_class,diploma_type,course_name,percent_10th,passing_year_10th,percent_12th,passing_year_12th,percent_last,entrance_exam,entrance_rank
+Reyansh,Mishra,student1@scholarship.test,9800529660,Female,2005-01-01,Father1,48121,Bihar,Other,Diploma,NA,After 10th,NA,97,2025,0,0,50,DCECE,111
+Reyansh,Verma,student2@scholarship.test,9886490709,Male,2005-01-01,Father2,62227,Bihar,Other,Undergraduate,NA,NA,NA,92,2023,90,2025,50,JEE Mains,33549
+Riya,Gupta,student3@scholarship.test,9641107352,Male,2005-01-01,Father3,800000,Bihar,Patna,School,NA,NA,NA,50,2020,0,0,50,None,0
+Arjun,Verma,student4@scholarship.test,9294914528,Female,2005-01-01,Father4,100000,Bihar,Patna,Diploma,NA,After 10th,NA,85,2025,0,0,85,DCECE,2000
+Aarav,Gupta,student5@scholarship.test,9591014145,Male,2005-01-01,Father5,549276,UP,Other,School,NA,NA,NA,42,2020,0,0,50,None,0
+Aadhya,Sharma,student6@scholarship.test,9925473676,Male,2005-01-01,Father6,78460,Bihar,Other,School,Class 11,NA,NA,69,2025,0,0,69,None,0
+Diya,Singh,student7@scholarship.test,9832488469,Male,2005-01-01,Father7,162238,Bihar,Other,Diploma,NA,After 10th,NA,83,2025,0,0,50,DCECE,291
+Ananya,Jha,student8@scholarship.test,9122699658,Female,2005-01-01,Father8,236263,Bihar,Other,Undergraduate,NA,NA,NA,77,2023,76,2025,50,JEE Mains,18582
+Sai,Mishra,student9@scholarship.test,9208481107,Female,2005-01-01,Father9,800000,Bihar,Patna,School,NA,NA,NA,50,2020,0,0,50,None,0
+Ishaan,Gupta,student10@scholarship.test,9288120799,Female,2005-01-01,Father10,100000,Bihar,Patna,Diploma,NA,After 10th,NA,85,2025,0,0,85,DCECE,2000
+Sai,Verma,student11@scholarship.test,9735605041,Female,2005-01-01,Father11,676019,Delhi,Other,School,NA,NA,NA,48,2020,0,0,50,None,0
+Vihaan,Mishra,student12@scholarship.test,9655410418,Female,2005-01-01,Father12,89097,Bihar,Other,School,Class 11,NA,NA,85,2025,0,0,85,None,0
+Pari,Verma,student13@scholarship.test,9645987430,Female,2005-01-01,Father13,72951,Bihar,Other,Diploma,NA,After 10th,NA,94,2025,0,0,50,DCECE,3127
+Anvi,Mishra,student14@scholarship.test,9375014696,Female,2005-01-01,Father14,153711,Bihar,Other,Undergraduate,NA,NA,NA,91,2023,77,2025,50,JEE Mains,28968
+Krishna,Gupta,student15@scholarship.test,9394589555,Male,2005-01-01,Father15,800000,Bihar,Patna,School,NA,NA,NA,50,2020,0,0,50,None,0
+Sai,Singh,student16@scholarship.test,9679048803,Female,2005-01-01,Father16,100000,Bihar,Patna,Diploma,NA,After 10th,NA,85,2025,0,0,85,DCECE,2000
+Sneha,Gupta,student17@scholarship.test,9329920087,Male,2005-01-01,Father17,701256,UP,Other,School,NA,NA,NA,48,2020,0,0,50,None,0
+Ayaan,Jha,student18@scholarship.test,9735418413,Male,2005-01-01,Father18,89888,Bihar,Other,School,Class 11,NA,NA,81,2025,0,0,81,None,0
+Myra,Yadav,student19@scholarship.test,9914669352,Male,2005-01-01,Father19,90193,Bihar,Other,Diploma,NA,After 10th,NA,85,2025,0,0,50,DCECE,2312
+Priya,Jha,student20@scholarship.test,9876037786,Female,2005-01-01,Father20,64351,Bihar,Other,Undergraduate,NA,NA,NA,89,2023,79,2025,50,JEE Mains,66217
+Myra,Das,student21@scholarship.test,9129784503,Female,2005-01-01,Father21,800000,Bihar,Patna,School,NA,NA,NA,50,2020,0,0,50,None,0
+Ishaan,Singh,student22@scholarship.test,9615579743,Male,2005-01-01,Father22,100000,Bihar,Patna,Diploma,NA,After 10th,NA,85,2025,0,0,85,DCECE,2000
+Aarav,Sharma,student23@scholarship.test,9374383305,Female,2005-01-01,Father23,907615,Delhi,Other,School,NA,NA,NA,42,2020,0,0,50,None,0
+Sneha,Singh,student24@scholarship.test,9941528724,Male,2005-01-01,Father24,204080,Bihar,Other,School,Class 11,NA,NA,69,2025,0,0,69,None,0
+Pari,Das,student25@scholarship.test,9637161985,Female,2005-01-01,Father25,138027,Bihar,Other,Diploma,NA,After 10th,NA,97,2025,0,0,50,DCECE,3657
+Sneha,Yadav,student26@scholarship.test,9396454189,Male,2005-01-01,Father26,231945,Bihar,Other,Undergraduate,NA,NA,NA,85,2023,81,2025,50,JEE Mains,3453
+Aditya,Singh,student27@scholarship.test,9806100831,Male,2005-01-01,Father27,800000,Bihar,Patna,School,NA,NA,NA,50,2020,0,0,50,None,0
+Anvi,Kumar,student28@scholarship.test,9500661666,Male,2005-01-01,Father28,100000,Bihar,Patna,Diploma,NA,After 10th,NA,85,2025,0,0,85,DCECE,2000
+Anvi,Mishra,student29@scholarship.test,9207096638,Female,2005-01-01,Father29,906644,Maharashtra,Other,School,NA,NA,NA,49,2020,0,0,50,None,0
+Reyansh,Mishra,student30@scholarship.test,9422824933,Male,2005-01-01,Father30,134745,Bihar,Other,School,Class 11,NA,NA,70,2025,0,0,70,None,0
+Ishaan,Yadav,student31@scholarship.test,9756015906,Male,2005-01-01,Father31,58315,Bihar,Other,Diploma,NA,After 10th,NA,83,2025,0,0,50,DCECE,507
+Diya,Jha,student32@scholarship.test,9140303491,Male,2005-01-01,Father32,53968,Bihar,Other,Undergraduate,NA,NA,NA,90,2023,80,2025,50,JEE Mains,53941
+Saanvi,Yadav,student33@scholarship.test,9838259516,Female,2005-01-01,Father33,800000,Bihar,Patna,School,NA,NA,NA,50,2020,0,0,50,None,0
+Rahul,Verma,student34@scholarship.test,9419616736,Male,2005-01-01,Father34,100000,Bihar,Patna,Diploma,NA,After 10th,NA,85,2025,0,0,85,DCECE,2000
+Saanvi,Jha,student35@scholarship.test,9122354671,Female,2005-01-01,Father35,869357,Maharashtra,Other,School,NA,NA,NA,49,2020,0,0,50,None,0
+Diya,Mishra,student36@scholarship.test,9630296549,Male,2005-01-01,Father36,66812,Bihar,Other,School,Class 11,NA,NA,95,2025,0,0,95,None,0
+Vihaan,Jha,student37@scholarship.test,9605994708,Male,2005-01-01,Father37,68239,Bihar,Other,Diploma,NA,After 10th,NA,85,2025,0,0,50,DCECE,307
+Myra,Verma,student38@scholarship.test,9336094358,Male,2005-01-01,Father38,235805,Bihar,Other,Undergraduate,NA,NA,NA,95,2023,84,2025,50,JEE Mains,58919
+Amit,Mishra,student39@scholarship.test,9923639068,Male,2005-01-01,Father39,800000,Bihar,Patna,School,NA,NA,NA,50,2020,0,0,50,None,0
+Aditya,Yadav,student40@scholarship.test,9413454092,Male,2005-01-01,Father40,100000,Bihar,Patna,Diploma,NA,After 10th,NA,85,2025,0,0,85,DCECE,2000
+Krishna,Gupta,student41@scholarship.test,9274837885,Female,2005-01-01,Father41,913543,Maharashtra,Other,School,NA,NA,NA,46,2020,0,0,50,None,0
+Diya,Sharma,student42@scholarship.test,9761502089,Female,2005-01-01,Father42,63021,Bihar,Other,School,Class 11,NA,NA,83,2025,0,0,83,None,0
+Arjun,Kumar,student43@scholarship.test,9806157970,Male,2005-01-01,Father43,149347,Bihar,Other,Diploma,NA,After 10th,NA,83,2025,0,0,50,DCECE,1671
+Diya,Jha,student44@scholarship.test,9928083100,Male,2005-01-01,Father44,70272,Bihar,Other,Undergraduate,NA,NA,NA,86,2023,95,2025,50,JEE Mains,59627
+Reyansh,Sharma,student45@scholarship.test,9610270751,Male,2005-01-01,Father45,800000,Bihar,Patna,School,NA,NA,NA,50,2020,0,0,50,None,0
+Vivaan,Jha,student46@scholarship.test,9164542357,Female,2005-01-01,Father46,100000,Bihar,Patna,Diploma,NA,After 10th,NA,85,2025,0,0,85,DCECE,2000
+Myra,Jha,student47@scholarship.test,9122211634,Male,2005-01-01,Father47,714038,UP,Other,School,NA,NA,NA,47,2020,0,0,50,None,0
+Pari,Jha,student48@scholarship.test,9590158878,Female,2005-01-01,Father48,243642,Bihar,Other,School,Class 11,NA,NA,65,2025,0,0,65,None,0
+Riya,Kumar,student49@scholarship.test,9210454050,Female,2005-01-01,Father49,120054,Bihar,Other,Diploma,NA,After 10th,NA,84,2025,0,0,50,DCECE,3702
+Anvi,Verma,student50@scholarship.test,9545903142,Female,2005-01-01,Father50,152153,Bihar,Other,Undergraduate,NA,NA,NA,81,2023,82,2025,50,JEE Mains,72069
+Ayaan,Verma,student51@scholarship.test,9323080609,Male,2005-01-01,Father51,800000,Bihar,Patna,School,NA,NA,NA,50,2020,0,0,50,None,0
+Anvi,Singh,student52@scholarship.test,9999211592,Male,2005-01-01,Father52,100000,Bihar,Patna,Diploma,NA,After 10th,NA,85,2025,0,0,85,DCECE,2000
+Vihaan,Sharma,student53@scholarship.test,9782809408,Female,2005-01-01,Father53,713731,Delhi,Other,School,NA,NA,NA,46,2020,0,0,50,None,0
+Sai,Kumar,student54@scholarship.test,9762972138,Male,2005-01-01,Father54,140945,Bihar,Other,School,Class 11,NA,NA,75,2025,0,0,75,None,0
+Riya,Singh,student55@scholarship.test,9242969893,Female,2005-01-01,Father55,113328,Bihar,Other,Diploma,NA,After 10th,NA,88,2025,0,0,50,DCECE,61
+Amit,Kumar,student56@scholarship.test,9461791699,Male,2005-01-01,Father56,151240,Bihar,Other,Undergraduate,NA,NA,NA,92,2023,92,2025,50,JEE Mains,2171
+Ishaan,Mishra,student57@scholarship.test,9984589602,Female,2005-01-01,Father57,800000,Bihar,Patna,School,NA,NA,NA,50,2020,0,0,50,None,0
+Saanvi,Sharma,student58@scholarship.test,9940170697,Male,2005-01-01,Father58,100000,Bihar,Patna,Diploma,NA,After 10th,NA,85,2025,0,0,85,DCECE,2000
+Riya,Das,student59@scholarship.test,9699659458,Male,2005-01-01,Father59,766259,West Bengal,Other,School,NA,NA,NA,49,2020,0,0,50,None,0
+Amit,Verma,student60@scholarship.test,9862107781,Male,2005-01-01,Father60,212408,Bihar,Other,School,Class 11,NA,NA,79,2025,0,0,79,None,0
+Pari,Jha,student61@scholarship.test,9826051964,Male,2005-01-01,Father61,56177,Bihar,Other,Diploma,NA,After 10th,NA,92,2025,0,0,50,DCECE,2152
+Sai,Gupta,student62@scholarship.test,9597301528,Female,2005-01-01,Father62,221603,Bihar,Other,Undergraduate,NA,NA,NA,78,2023,83,2025,50,JEE Mains,1809
+Krishna,Gupta,student63@scholarship.test,9254922829,Female,2005-01-01,Father63,800000,Bihar,Patna,School,NA,NA,NA,50,2020,0,0,50,None,0
+Riya,Das,student64@scholarship.test,9603508943,Male,2005-01-01,Father64,100000,Bihar,Patna,Diploma,NA,After 10th,NA,85,2025,0,0,85,DCECE,2000
+Anvi,Sharma,student65@scholarship.test,9167588183,Female,2005-01-01,Father65,598711,UP,Other,School,NA,NA,NA,44,2020,0,0,50,None,0
+Anvi,Sharma,student66@scholarship.test,9982894055,Male,2005-01-01,Father66,177157,Bihar,Other,School,Class 11,NA,NA,72,2025,0,0,72,None,0
+Myra,Yadav,student67@scholarship.test,9204409349,Male,2005-01-01,Father67,122412,Bihar,Other,Diploma,NA,After 10th,NA,82,2025,0,0,50,DCECE,3144
+Riya,Verma,student68@scholarship.test,9317859369,Female,2005-01-01,Father68,112264,Bihar,Other,Undergraduate,NA,NA,NA,76,2023,93,2025,50,JEE Mains,66033
+Sneha,Mishra,student69@scholarship.test,9803219345,Female,2005-01-01,Father69,800000,Bihar,Patna,School,NA,NA,NA,50,2020,0,0,50,None,0
+Sai,Das,student70@scholarship.test,9744147131,Male,2005-01-01,Father70,100000,Bihar,Patna,Diploma,NA,After 10th,NA,85,2025,0,0,85,DCECE,2000
+Sneha,Kumar,student71@scholarship.test,9235749889,Male,2005-01-01,Father71,951432,Maharashtra,Other,School,NA,NA,NA,46,2020,0,0,50,None,0
+Saanvi,Singh,student72@scholarship.test,9934947541,Female,2005-01-01,Father72,51844,Bihar,Other,School,Class 11,NA,NA,90,2025,0,0,90,None,0
+Diya,Jha,student73@scholarship.test,9481203724,Female,2005-01-01,Father73,86121,Bihar,Other,Diploma,NA,After 10th,NA,88,2025,0,0,50,DCECE,91
+Myra,Kumar,student74@scholarship.test,9659632057,Male,2005-01-01,Father74,83074,Bihar,Other,Undergraduate,NA,NA,NA,83,2023,91,2025,50,JEE Mains,24712
+Amit,Verma,student75@scholarship.test,9612197772,Female,2005-01-01,Father75,800000,Bihar,Patna,School,NA,NA,NA,50,2020,0,0,50,None,0
+Priya,Sharma,student76@scholarship.test,9758544331,Female,2005-01-01,Father76,100000,Bihar,Patna,Diploma,NA,After 10th,NA,85,2025,0,0,85,DCECE,2000
+Aadhya,Jha,student77@scholarship.test,9311752876,Female,2005-01-01,Father77,694882,West Bengal,Other,School,NA,NA,NA,43,2020,0,0,50,None,0
+Arjun,Yadav,student78@scholarship.test,9932253497,Male,2005-01-01,Father78,54792,Bihar,Other,School,Class 11,NA,NA,65,2025,0,0,65,None,0
+Myra,Das,student79@scholarship.test,9664169988,Female,2005-01-01,Father79,103335,Bihar,Other,Diploma,NA,After 10th,NA,92,2025,0,0,50,DCECE,555
+Rahul,Verma,student80@scholarship.test,9656382923,Female,2005-01-01,Father80,107741,Bihar,Other,Undergraduate,NA,NA,NA,92,2023,76,2025,50,JEE Mains,73389
+Vivaan,Jha,student81@scholarship.test,9230271162,Male,2005-01-01,Father81,800000,Bihar,Patna,School,NA,NA,NA,50,2020,0,0,50,None,0
+Pari,Gupta,student82@scholarship.test,9578254991,Male,2005-01-01,Father82,100000,Bihar,Patna,Diploma,NA,After 10th,NA,85,2025,0,0,85,DCECE,2000
+Priya,Das,student83@scholarship.test,9521782190,Female,2005-01-01,Father83,818783,Delhi,Other,School,NA,NA,NA,43,2020,0,0,50,None,0
+Arjun,Jha,student84@scholarship.test,9864059582,Male,2005-01-01,Father84,187047,Bihar,Other,School,Class 11,NA,NA,92,2025,0,0,92,None,0
+Rahul,Singh,student85@scholarship.test,9393909855,Male,2005-01-01,Father85,53135,Bihar,Other,Diploma,NA,After 10th,NA,89,2025,0,0,50,DCECE,2097
+Riya,Singh,student86@scholarship.test,9722943458,Female,2005-01-01,Father86,65330,Bihar,Other,Undergraduate,NA,NA,NA,92,2023,92,2025,50,JEE Mains,28170
+Diya,Das,student87@scholarship.test,9922579844,Female,2005-01-01,Father87,800000,Bihar,Patna,School,NA,NA,NA,50,2020,0,0,50,None,0
+Aadhya,Kumar,student88@scholarship.test,9691437693,Male,2005-01-01,Father88,100000,Bihar,Patna,Diploma,NA,After 10th,NA,85,2025,0,0,85,DCECE,2000
+Arjun,Verma,student89@scholarship.test,9777321472,Female,2005-01-01,Father89,569539,Maharashtra,Other,School,NA,NA,NA,46,2020,0,0,50,None,0
+Riya,Mishra,student90@scholarship.test,9453985603,Male,2005-01-01,Father90,197190,Bihar,Other,School,Class 11,NA,NA,80,2025,0,0,80,None,0
+Aadhya,Das,student91@scholarship.test,9712799977,Female,2005-01-01,Father91,116269,Bihar,Other,Diploma,NA,After 10th,NA,95,2025,0,0,50,DCECE,864
+Riya,Verma,student92@scholarship.test,9855406686,Male,2005-01-01,Father92,97161,Bihar,Other,Undergraduate,NA,NA,NA,83,2023,94,2025,50,JEE Mains,77219
+Vihaan,Yadav,student93@scholarship.test,9103746841,Male,2005-01-01,Father93,800000,Bihar,Patna,School,NA,NA,NA,50,2020,0,0,50,None,0
+Aditya,Sharma,student94@scholarship.test,9688534725,Female,2005-01-01,Father94,100000,Bihar,Patna,Diploma,NA,After 10th,NA,85,2025,0,0,85,DCECE,2000
+Vivaan,Das,student95@scholarship.test,9489412017,Female,2005-01-01,Father95,761305,Maharashtra,Other,School,NA,NA,NA,41,2020,0,0,50,None,0
+Vihaan,Jha,student96@scholarship.test,9843690808,Female,2005-01-01,Father96,98175,Bihar,Other,School,Class 11,NA,NA,66,2025,0,0,66,None,0
+Myra,Mishra,student97@scholarship.test,9762560129,Female,2005-01-01,Father97,69026,Bihar,Other,Diploma,NA,After 10th,NA,98,2025,0,0,50,DCECE,356
+Sneha,Mishra,student98@scholarship.test,9888981709,Male,2005-01-01,Father98,231679,Bihar,Other,Undergraduate,NA,NA,NA,88,2023,90,2025,50,JEE Mains,20610
+Diya,Jha,student99@scholarship.test,9197218571,Female,2005-01-01,Father99,800000,Bihar,Patna,School,NA,NA,NA,50,2020,0,0,50,None,0
+Priya,Patel,student100@scholarship.test,9585462699,Female,2005-01-01,Father100,100000,Bihar,Patna,Diploma,NA,After 10th,NA,85,2025,0,0,85,DCECE,2000
+Myra,Mishra,student101@scholarship.test,9773555474,Male,2005-01-01,Father101,793760,Maharashtra,Other,School,NA,NA,NA,49,2020,0,0,50,None,0
+Vivaan,Yadav,student102@scholarship.test,9354303835,Female,2005-01-01,Father102,205925,Bihar,Other,School,Class 11,NA,NA,90,2025,0,0,90,None,0
+Reyansh,Das,student103@scholarship.test,9569840514,Male,2005-01-01,Father103,130593,Bihar,Other,Diploma,NA,After 10th,NA,90,2025,0,0,50,DCECE,3138
+Arjun,Das,student104@scholarship.test,9660648367,Female,2005-01-01,Father104,157094,Bihar,Other,Undergraduate,NA,NA,NA,77,2023,79,2025,50,JEE Mains,58325
+Sai,Patel,student105@scholarship.test,9876376360,Male,2005-01-01,Father105,800000,Bihar,Patna,School,NA,NA,NA,50,2020,0,0,50,None,0
+Sneha,Patel,student106@scholarship.test,9194938685,Female,2005-01-01,Father106,100000,Bihar,Patna,Diploma,NA,After 10th,NA,85,2025,0,0,85,DCECE,2000
+Sneha,Kumar,student107@scholarship.test,9937068390,Female,2005-01-01,Father107,501152,Maharashtra,Other,School,NA,NA,NA,50,2020,0,0,50,None,0
+Anvi,Gupta,student108@scholarship.test,9617725687,Female,2005-01-01,Father108,249277,Bihar,Other,School,Class 11,NA,NA,94,2025,0,0,94,None,0
+Aditya,Verma,student109@scholarship.test,9898658044,Male,2005-01-01,Father109,114986,Bihar,Other,Diploma,NA,After 10th,NA,95,2025,0,0,50,DCECE,550
+Riya,Gupta,student110@scholarship.test,9753864005,Female,2005-01-01,Father110,160053,Bihar,Other,Undergraduate,NA,NA,NA,94,2023,87,2025,50,JEE Mains,1662
+Rahul,Singh,student111@scholarship.test,9894238398,Female,2005-01-01,Father111,800000,Bihar,Patna,School,NA,NA,NA,50,2020,0,0,50,None,0
+Aditya,Jha,student112@scholarship.test,9942036225,Female,2005-01-01,Father112,100000,Bihar,Patna,Diploma,NA,After 10th,NA,85,2025,0,0,85,DCECE,2000
+Aadhya,Kumar,student113@scholarship.test,9120809264,Female,2005-01-01,Father113,542856,Maharashtra,Other,School,NA,NA,NA,43,2020,0,0,50,None,0
+Arjun,Yadav,student114@scholarship.test,9532796709,Female,2005-01-01,Father114,175957,Bihar,Other,School,Class 11,NA,NA,85,2025,0,0,85,None,0
+Ishaan,Singh,student115@scholarship.test,9170652307,Female,2005-01-01,Father115,119651,Bihar,Other,Diploma,NA,After 10th,NA,91,2025,0,0,50,DCECE,750
+Amit,Das,student116@scholarship.test,9235161490,Male,2005-01-01,Father116,215384,Bihar,Other,Undergraduate,NA,NA,NA,81,2023,78,2025,50,JEE Mains,60272
+Sneha,Yadav,student117@scholarship.test,9783990474,Male,2005-01-01,Father117,800000,Bihar,Patna,School,NA,NA,NA,50,2020,0,0,50,None,0
+Vivaan,Kumar,student118@scholarship.test,9178608076,Female,2005-01-01,Father118,100000,Bihar,Patna,Diploma,NA,After 10th,NA,85,2025,0,0,85,DCECE,2000
+Ayaan,Verma,student119@scholarship.test,9723048795,Female,2005-01-01,Father119,905631,UP,Other,School,NA,NA,NA,44,2020,0,0,50,None,0
+Pari,Jha,student120@scholarship.test,9767562299,Male,2005-01-01,Father120,179792,Bihar,Other,School,Class 11,NA,NA,93,2025,0,0,93,None,0
+Priya,Yadav,student121@scholarship.test,9188462659,Female,2005-01-01,Father121,81392,Bihar,Other,Diploma,NA,After 10th,NA,93,2025,0,0,50,DCECE,1847
+Rahul,Sharma,student122@scholarship.test,9417264630,Female,2005-01-01,Father122,75260,Bihar,Other,Undergraduate,NA,NA,NA,88,2023,82,2025,50,JEE Mains,7407
+Saanvi,Patel,student123@scholarship.test,9781250164,Female,2005-01-01,Father123,800000,Bihar,Patna,School,NA,NA,NA,50,2020,0,0,50,None,0
+Pari,Das,student124@scholarship.test,9123406360,Male,2005-01-01,Father124,100000,Bihar,Patna,Diploma,NA,After 10th,NA,85,2025,0,0,85,DCECE,2000
+Aadhya,Sharma,student125@scholarship.test,9558858899,Male,2005-01-01,Father125,842010,UP,Other,School,NA,NA,NA,45,2020,0,0,50,None,0
+Riya,Jha,student126@scholarship.test,9383845920,Female,2005-01-01,Father126,138973,Bihar,Other,School,Class 11,NA,NA,73,2025,0,0,73,None,0
+Riya,Jha,student127@scholarship.test,9505914372,Female,2005-01-01,Father127,132812,Bihar,Other,Diploma,NA,After 10th,NA,97,2025,0,0,50,DCECE,2207
+Aditya,Sharma,student128@scholarship.test,9419938515,Male,2005-01-01,Father128,227449,Bihar,Other,Undergraduate,NA,NA,NA,85,2023,81,2025,50,JEE Mains,69093
+Rahul,Sharma,student129@scholarship.test,9174922065,Female,2005-01-01,Father129,800000,Bihar,Patna,School,NA,NA,NA,50,2020,0,0,50,None,0
+Aditya,Yadav,student130@scholarship.test,9701553784,Female,2005-01-01,Father130,100000,Bihar,Patna,Diploma,NA,After 10th,NA,85,2025,0,0,85,DCECE,2000
+Krishna,Sharma,student131@scholarship.test,9601520750,Female,2005-01-01,Father131,863684,Maharashtra,Other,School,NA,NA,NA,40,2020,0,0,50,None,0
+Ishaan,Gupta,student132@scholarship.test,9780755304,Male,2005-01-01,Father132,106417,Bihar,Other,School,Class 11,NA,NA,87,2025,0,0,87,None,0
+Ishaan,Verma,student133@scholarship.test,9161688460,Female,2005-01-01,Father133,56380,Bihar,Other,Diploma,NA,After 10th,NA,85,2025,0,0,50,DCECE,1143
+Sai,Jha,student134@scholarship.test,9403127706,Female,2005-01-01,Father134,60870,Bihar,Other,Undergraduate,NA,NA,NA,80,2023,95,2025,50,JEE Mains,78208
+Sneha,Yadav,student135@scholarship.test,9857059998,Male,2005-01-01,Father135,800000,Bihar,Patna,School,NA,NA,NA,50,2020,0,0,50,None,0
+Pari,Mishra,student136@scholarship.test,9992712856,Male,2005-01-01,Father136,100000,Bihar,Patna,Diploma,NA,After 10th,NA,85,2025,0,0,85,DCECE,2000
+Saanvi,Patel,student137@scholarship.test,9265392467,Female,2005-01-01,Father137,651205,West Bengal,Other,School,NA,NA,NA,42,2020,0,0,50,None,0
+Priya,Patel,student138@scholarship.test,9723439621,Male,2005-01-01,Father138,108931,Bihar,Other,School,Class 11,NA,NA,84,2025,0,0,84,None,0
+Myra,Gupta,student139@scholarship.test,9806893332,Male,2005-01-01,Father139,122555,Bihar,Other,Diploma,NA,After 10th,NA,96,2025,0,0,50,DCECE,3404
+Vihaan,Jha,student140@scholarship.test,9944881899,Female,2005-01-01,Father140,102620,Bihar,Other,Undergraduate,NA,NA,NA,76,2023,88,2025,50,JEE Mains,6775
+Ayaan,Sharma,student141@scholarship.test,9415781606,Male,2005-01-01,Father141,800000,Bihar,Patna,School,NA,NA,NA,50,2020,0,0,50,None,0
+Ishaan,Sharma,student142@scholarship.test,9932412465,Male,2005-01-01,Father142,100000,Bihar,Patna,Diploma,NA,After 10th,NA,85,2025,0,0,85,DCECE,2000
+Pari,Kumar,student143@scholarship.test,9289148376,Female,2005-01-01,Father143,971715,West Bengal,Other,School,NA,NA,NA,44,2020,0,0,50,None,0
+Aadhya,Gupta,student144@scholarship.test,9971115509,Male,2005-01-01,Father144,223520,Bihar,Other,School,Class 11,NA,NA,70,2025,0,0,70,None,0
+Amit,Yadav,student145@scholarship.test,9883829403,Male,2005-01-01,Father145,105617,Bihar,Other,Diploma,NA,After 10th,NA,89,2025,0,0,50,DCECE,621
+Anvi,Mishra,student146@scholarship.test,9285044842,Female,2005-01-01,Father146,211828,Bihar,Other,Undergraduate,NA,NA,NA,88,2023,91,2025,50,JEE Mains,13178
+Ishaan,Sharma,student147@scholarship.test,9666838215,Male,2005-01-01,Father147,800000,Bihar,Patna,School,NA,NA,NA,50,2020,0,0,50,None,0
+Reyansh,Patel,student148@scholarship.test,9992611457,Male,2005-01-01,Father148,100000,Bihar,Patna,Diploma,NA,After 10th,NA,85,2025,0,0,85,DCECE,2000
+Rahul,Das,student149@scholarship.test,9613714291,Female,2005-01-01,Father149,960843,Maharashtra,Other,School,NA,NA,NA,40,2020,0,0,50,None,0
+Pari,Yadav,student150@scholarship.test,9551387997,Female,2005-01-01,Father150,154580,Bihar,Other,School,Class 11,NA,NA,84,2025,0,0,84,None,0
+Krishna,Kumar,student151@scholarship.test,9653423040,Female,2005-01-01,Father151,115493,Bihar,Other,Diploma,NA,After 10th,NA,93,2025,0,0,50,DCECE,469
+Aadhya,Mishra,student152@scholarship.test,9100445753,Male,2005-01-01,Father152,198288,Bihar,Other,Undergraduate,NA,NA,NA,76,2023,81,2025,50,JEE Mains,74556
+Vivaan,Sharma,student153@scholarship.test,9862901780,Male,2005-01-01,Father153,800000,Bihar,Patna,School,NA,NA,NA,50,2020,0,0,50,None,0
+Vivaan,Yadav,student154@scholarship.test,9769586030,Male,2005-01-01,Father154,100000,Bihar,Patna,Diploma,NA,After 10th,NA,85,2025,0,0,85,DCECE,2000
+Amit,Jha,student155@scholarship.test,9414305363,Male,2005-01-01,Father155,562009,West Bengal,Other,School,NA,NA,NA,47,2020,0,0,50,None,0
+Vihaan,Verma,student156@scholarship.test,9182070844,Male,2005-01-01,Father156,211795,Bihar,Other,School,Class 11,NA,NA,87,2025,0,0,87,None,0
+Ananya,Yadav,student157@scholarship.test,9986659120,Male,2005-01-01,Father157,171320,Bihar,Other,Diploma,NA,After 10th,NA,84,2025,0,0,50,DCECE,2640
+Ananya,Kumar,student158@scholarship.test,9898876474,Female,2005-01-01,Father158,145812,Bihar,Other,Undergraduate,NA,NA,NA,92,2023,95,2025,50,JEE Mains,55172
+Sneha,Yadav,student159@scholarship.test,9525526175,Female,2005-01-01,Father159,800000,Bihar,Patna,School,NA,NA,NA,50,2020,0,0,50,None,0
+Anvi,Kumar,student160@scholarship.test,9958792482,Female,2005-01-01,Father160,100000,Bihar,Patna,Diploma,NA,After 10th,NA,85,2025,0,0,85,DCECE,2000
+Amit,Yadav,student161@scholarship.test,9732862734,Female,2005-01-01,Father161,528960,West Bengal,Other,School,NA,NA,NA,42,2020,0,0,50,None,0
+Reyansh,Singh,student162@scholarship.test,9172107866,Male,2005-01-01,Father162,116860,Bihar,Other,School,Class 11,NA,NA,69,2025,0,0,69,None,0
+Aarav,Kumar,student163@scholarship.test,9517768275,Female,2005-01-01,Father163,123077,Bihar,Other,Diploma,NA,After 10th,NA,88,2025,0,0,50,DCECE,304
+Saanvi,Sharma,student164@scholarship.test,9886754680,Female,2005-01-01,Father164,180952,Bihar,Other,Undergraduate,NA,NA,NA,82,2023,84,2025,50,JEE Mains,64471
+Priya,Kumar,student165@scholarship.test,9642750876,Female,2005-01-01,Father165,800000,Bihar,Patna,School,NA,NA,NA,50,2020,0,0,50,None,0
+Arjun,Singh,student166@scholarship.test,9285597934,Female,2005-01-01,Father166,100000,Bihar,Patna,Diploma,NA,After 10th,NA,85,2025,0,0,85,DCECE,2000
+Pari,Das,student167@scholarship.test,9678686873,Male,2005-01-01,Father167,560274,Maharashtra,Other,School,NA,NA,NA,43,2020,0,0,50,None,0
+Pari,Das,student168@scholarship.test,9857691883,Male,2005-01-01,Father168,208027,Bihar,Other,School,Class 11,NA,NA,78,2025,0,0,78,None,0
+Ananya,Sharma,student169@scholarship.test,9840464953,Female,2005-01-01,Father169,68718,Bihar,Other,Diploma,NA,After 10th,NA,98,2025,0,0,50,DCECE,1373
+Reyansh,Singh,student170@scholarship.test,9163544022,Female,2005-01-01,Father170,243070,Bihar,Other,Undergraduate,NA,NA,NA,90,2023,80,2025,50,JEE Mains,52794
+Aarav,Singh,student171@scholarship.test,9565333585,Male,2005-01-01,Father171,800000,Bihar,Patna,School,NA,NA,NA,50,2020,0,0,50,None,0
+Krishna,Verma,student172@scholarship.test,9558610561,Male,2005-01-01,Father172,100000,Bihar,Patna,Diploma,NA,After 10th,NA,85,2025,0,0,85,DCECE,2000
+Aditya,Das,student173@scholarship.test,9965119582,Male,2005-01-01,Father173,741760,West Bengal,Other,School,NA,NA,NA,45,2020,0,0,50,None,0
+Ishaan,Gupta,student174@scholarship.test,9126806476,Female,2005-01-01,Father174,67683,Bihar,Other,School,Class 11,NA,NA,80,2025,0,0,80,None,0
+Saanvi,Yadav,student175@scholarship.test,9730879963,Female,2005-01-01,Father175,54235,Bihar,Other,Diploma,NA,After 10th,NA,81,2025,0,0,50,DCECE,3162
+Amit,Patel,student176@scholarship.test,9647430706,Male,2005-01-01,Father176,234125,Bihar,Other,Undergraduate,NA,NA,NA,92,2023,95,2025,50,JEE Mains,68773
+Aadhya,Patel,student177@scholarship.test,9990199584,Male,2005-01-01,Father177,800000,Bihar,Patna,School,NA,NA,NA,50,2020,0,0,50,None,0
+Anvi,Yadav,student178@scholarship.test,9684528767,Female,2005-01-01,Father178,100000,Bihar,Patna,Diploma,NA,After 10th,NA,85,2025,0,0,85,DCECE,2000
+Anvi,Verma,student179@scholarship.test,9874321017,Female,2005-01-01,Father179,772007,West Bengal,Other,School,NA,NA,NA,48,2020,0,0,50,None,0
+Vivaan,Sharma,student180@scholarship.test,9259883272,Female,2005-01-01,Father180,244315,Bihar,Other,School,Class 11,NA,NA,89,2025,0,0,89,None,0
+Krishna,Das,student181@scholarship.test,9837565571,Male,2005-01-01,Father181,85570,Bihar,Other,Diploma,NA,After 10th,NA,94,2025,0,0,50,DCECE,3547
+Ananya,Sharma,student182@scholarship.test,9974517670,Male,2005-01-01,Father182,103285,Bihar,Other,Undergraduate,NA,NA,NA,84,2023,89,2025,50,JEE Mains,39367
+Sai,Patel,student183@scholarship.test,9824372185,Male,2005-01-01,Father183,800000,Bihar,Patna,School,NA,NA,NA,50,2020,0,0,50,None,0
+Myra,Mishra,student184@scholarship.test,9617949257,Male,2005-01-01,Father184,100000,Bihar,Patna,Diploma,NA,After 10th,NA,85,2025,0,0,85,DCECE,2000
+Sai,Mishra,student185@scholarship.test,9294108703,Female,2005-01-01,Father185,636641,Maharashtra,Other,School,NA,NA,NA,40,2020,0,0,50,None,0
+Vivaan,Das,student186@scholarship.test,9936599640,Female,2005-01-01,Father186,79060,Bihar,Other,School,Class 11,NA,NA,68,2025,0,0,68,None,0
+Rahul,Patel,student187@scholarship.test,9802896007,Female,2005-01-01,Father187,143733,Bihar,Other,Diploma,NA,After 10th,NA,98,2025,0,0,50,DCECE,3694
+Vihaan,Patel,student188@scholarship.test,9411166743,Female,2005-01-01,Father188,236007,Bihar,Other,Undergraduate,NA,NA,NA,84,2023,87,2025,50,JEE Mains,72466
+Saanvi,Das,student189@scholarship.test,9361744877,Female,2005-01-01,Father189,800000,Bihar,Patna,School,NA,NA,NA,50,2020,0,0,50,None,0
+Krishna,Patel,student190@scholarship.test,9996168045,Male,2005-01-01,Father190,100000,Bihar,Patna,Diploma,NA,After 10th,NA,85,2025,0,0,85,DCECE,2000
+Riya,Kumar,student191@scholarship.test,9910988336,Female,2005-01-01,Father191,985596,UP,Other,School,NA,NA,NA,45,2020,0,0,50,None,0
+Anvi,Sharma,student192@scholarship.test,9592265328,Male,2005-01-01,Father192,81297,Bihar,Other,School,Class 11,NA,NA,87,2025,0,0,87,None,0
+Anvi,Das,student193@scholarship.test,9774450661,Male,2005-01-01,Father193,76829,Bihar,Other,Diploma,NA,After 10th,NA,95,2025,0,0,50,DCECE,3000
+Priya,Patel,student194@scholarship.test,9150754542,Male,2005-01-01,Father194,58319,Bihar,Other,Undergraduate,NA,NA,NA,93,2023,91,2025,50,JEE Mains,62988
+Rahul,Verma,student195@scholarship.test,9115482749,Male,2005-01-01,Father195,800000,Bihar,Patna,School,NA,NA,NA,50,2020,0,0,50,None,0
+Reyansh,Yadav,student196@scholarship.test,9492905336,Female,2005-01-01,Father196,100000,Bihar,Patna,Diploma,NA,After 10th,NA,85,2025,0,0,85,DCECE,2000
+Ananya,Verma,student197@scholarship.test,9145923896,Male,2005-01-01,Father197,746262,Maharashtra,Other,School,NA,NA,NA,48,2020,0,0,50,None,0
+Vivaan,Das,student198@scholarship.test,9185798585,Female,2005-01-01,Father198,200562,Bihar,Other,School,Class 11,NA,NA,75,2025,0,0,75,None,0
+Ishaan,Das,student199@scholarship.test,9665806422,Male,2005-01-01,Father199,149201,Bihar,Other,Diploma,NA,After 10th,NA,85,2025,0,0,50,DCECE,3305
+Riya,Verma,student200@scholarship.test,9603003154,Female,2005-01-01,Father200,184691,Bihar,Other,Undergraduate,NA,NA,NA,79,2023,91,2025,50,JEE Mains,3488
+Ayaan,Gupta,student201@scholarship.test,9545081163,Female,2005-01-01,Father201,800000,Bihar,Patna,School,NA,NA,NA,50,2020,0,0,50,None,0
+Aditya,Kumar,student202@scholarship.test,9481112682,Male,2005-01-01,Father202,100000,Bihar,Patna,Diploma,NA,After 10th,NA,85,2025,0,0,85,DCECE,2000
+Arjun,Gupta,student203@scholarship.test,9268965722,Male,2005-01-01,Father203,705429,West Bengal,Other,School,NA,NA,NA,47,2020,0,0,50,None,0
+Vivaan,Patel,student204@scholarship.test,9100521567,Female,2005-01-01,Father204,60904,Bihar,Other,School,Class 11,NA,NA,94,2025,0,0,94,None,0
+Sai,Patel,student205@scholarship.test,9369899137,Female,2005-01-01,Father205,148635,Bihar,Other,Diploma,NA,After 10th,NA,91,2025,0,0,50,DCECE,2978
+Rahul,Mishra,student206@scholarship.test,9693988013,Female,2005-01-01,Father206,162137,Bihar,Other,Undergraduate,NA,NA,NA,91,2023,82,2025,50,JEE Mains,31473
+Aarav,Singh,student207@scholarship.test,9476611242,Male,2005-01-01,Father207,800000,Bihar,Patna,School,NA,NA,NA,50,2020,0,0,50,None,0
+Reyansh,Singh,student208@scholarship.test,9938358875,Male,2005-01-01,Father208,100000,Bihar,Patna,Diploma,NA,After 10th,NA,85,2025,0,0,85,DCECE,2000
+Vihaan,Singh,student209@scholarship.test,9199687069,Female,2005-01-01,Father209,508666,UP,Other,School,NA,NA,NA,43,2020,0,0,50,None,0
+Sneha,Gupta,student210@scholarship.test,9268619812,Male,2005-01-01,Father210,61606,Bihar,Other,School,Class 11,NA,NA,73,2025,0,0,73,None,0
+Ananya,Kumar,student211@scholarship.test,9141404138,Male,2005-01-01,Father211,166924,Bihar,Other,Diploma,NA,After 10th,NA,96,2025,0,0,50,DCECE,1221
+Rahul,Yadav,student212@scholarship.test,9699691817,Female,2005-01-01,Father212,172384,Bihar,Other,Undergraduate,NA,NA,NA,80,2023,77,2025,50,JEE Mains,27354
+Vihaan,Kumar,student213@scholarship.test,9492506015,Female,2005-01-01,Father213,800000,Bihar,Patna,School,NA,NA,NA,50,2020,0,0,50,None,0
+Arjun,Jha,student214@scholarship.test,9397691751,Male,2005-01-01,Father214,100000,Bihar,Patna,Diploma,NA,After 10th,NA,85,2025,0,0,85,DCECE,2000
+Ishaan,Kumar,student215@scholarship.test,9454363716,Male,2005-01-01,Father215,857923,UP,Other,School,NA,NA,NA,49,2020,0,0,50,None,0
+Arjun,Kumar,student216@scholarship.test,9415305410,Male,2005-01-01,Father216,90620,Bihar,Other,School,Class 11,NA,NA,65,2025,0,0,65,None,0
+Reyansh,Verma,student217@scholarship.test,9774557100,Male,2005-01-01,Father217,75961,Bihar,Other,Diploma,NA,After 10th,NA,88,2025,0,0,50,DCECE,3142
+Reyansh,Yadav,student218@scholarship.test,9555686320,Male,2005-01-01,Father218,196679,Bihar,Other,Undergraduate,NA,NA,NA,84,2023,90,2025,50,JEE Mains,34716
+Aarav,Das,student219@scholarship.test,9133951787,Female,2005-01-01,Father219,800000,Bihar,Patna,School,NA,NA,NA,50,2020,0,0,50,None,0
+Aarav,Mishra,student220@scholarship.test,9403331195,Female,2005-01-01,Father220,100000,Bihar,Patna,Diploma,NA,After 10th,NA,85,2025,0,0,85,DCECE,2000
+Myra,Mishra,student221@scholarship.test,9362956356,Male,2005-01-01,Father221,869479,Delhi,Other,School,NA,NA,NA,44,2020,0,0,50,None,0
+Riya,Patel,student222@scholarship.test,9348575272,Male,2005-01-01,Father222,127289,Bihar,Other,School,Class 11,NA,NA,77,2025,0,0,77,None,0
+Anvi,Das,student223@scholarship.test,9336008831,Female,2005-01-01,Father223,149591,Bihar,Other,Diploma,NA,After 10th,NA,93,2025,0,0,50,DCECE,2643
+Saanvi,Mishra,student224@scholarship.test,9804552116,Female,2005-01-01,Father224,220234,Bihar,Other,Undergraduate,NA,NA,NA,86,2023,82,2025,50,JEE Mains,22868
+Aditya,Kumar,student225@scholarship.test,9327620487,Male,2005-01-01,Father225,800000,Bihar,Patna,School,NA,NA,NA,50,2020,0,0,50,None,0
+Aditya,Jha,student226@scholarship.test,9319830661,Male,2005-01-01,Father226,100000,Bihar,Patna,Diploma,NA,After 10th,NA,85,2025,0,0,85,DCECE,2000
+Arjun,Das,student227@scholarship.test,9132977144,Male,2005-01-01,Father227,628676,UP,Other,School,NA,NA,NA,44,2020,0,0,50,None,0
+Sneha,Kumar,student228@scholarship.test,9826466968,Female,2005-01-01,Father228,122073,Bihar,Other,School,Class 11,NA,NA,70,2025,0,0,70,None,0
+Rahul,Verma,student229@scholarship.test,9119117117,Male,2005-01-01,Father229,172028,Bihar,Other,Diploma,NA,After 10th,NA,85,2025,0,0,50,DCECE,3685
+Priya,Patel,student230@scholarship.test,9231314598,Female,2005-01-01,Father230,115793,Bihar,Other,Undergraduate,NA,NA,NA,80,2023,93,2025,50,JEE Mains,23211
+Sneha,Mishra,student231@scholarship.test,9984511295,Female,2005-01-01,Father231,800000,Bihar,Patna,School,NA,NA,NA,50,2020,0,0,50,None,0
+Anvi,Mishra,student232@scholarship.test,9728879754,Female,2005-01-01,Father232,100000,Bihar,Patna,Diploma,NA,After 10th,NA,85,2025,0,0,85,DCECE,2000
+Pari,Yadav,student233@scholarship.test,9255986959,Female,2005-01-01,Father233,760165,West Bengal,Other,School,NA,NA,NA,44,2020,0,0,50,None,0
+Vivaan,Sharma,student234@scholarship.test,9525364168,Male,2005-01-01,Father234,151860,Bihar,Other,School,Class 11,NA,NA,81,2025,0,0,81,None,0
+Arjun,Jha,student235@scholarship.test,9478768453,Male,2005-01-01,Father235,123946,Bihar,Other,Diploma,NA,After 10th,NA,85,2025,0,0,50,DCECE,646
+Pari,Sharma,student236@scholarship.test,9739407987,Female,2005-01-01,Father236,237834,Bihar,Other,Undergraduate,NA,NA,NA,76,2023,86,2025,50,JEE Mains,76849
+Aarav,Yadav,student237@scholarship.test,9830422412,Female,2005-01-01,Father237,800000,Bihar,Patna,School,NA,NA,NA,50,2020,0,0,50,None,0
+Reyansh,Yadav,student238@scholarship.test,9412389305,Female,2005-01-01,Father238,100000,Bihar,Patna,Diploma,NA,After 10th,NA,85,2025,0,0,85,DCECE,2000
+Aadhya,Yadav,student239@scholarship.test,9229761884,Male,2005-01-01,Father239,599233,Maharashtra,Other,School,NA,NA,NA,42,2020,0,0,50,None,0
+Reyansh,Kumar,student240@scholarship.test,9787372453,Male,2005-01-01,Father240,141236,Bihar,Other,School,Class 11,NA,NA,79,2025,0,0,79,None,0
+Arjun,Gupta,student241@scholarship.test,9361630039,Female,2005-01-01,Father241,87371,Bihar,Other,Diploma,NA,After 10th,NA,82,2025,0,0,50,DCECE,3185
+Rahul,Kumar,student242@scholarship.test,9169882236,Female,2005-01-01,Father242,124721,Bihar,Other,Undergraduate,NA,NA,NA,87,2023,79,2025,50,JEE Mains,39642
+Ishaan,Gupta,student243@scholarship.test,9435122482,Female,2005-01-01,Father243,800000,Bihar,Patna,School,NA,NA,NA,50,2020,0,0,50,None,0
+Diya,Yadav,student244@scholarship.test,9672525053,Female,2005-01-01,Father244,100000,Bihar,Patna,Diploma,NA,After 10th,NA,85,2025,0,0,85,DCECE,2000
+Diya,Verma,student245@scholarship.test,9208627948,Female,2005-01-01,Father245,528094,Maharashtra,Other,School,NA,NA,NA,43,2020,0,0,50,None,0
+Arjun,Yadav,student246@scholarship.test,9922923770,Male,2005-01-01,Father246,51445,Bihar,Other,School,Class 11,NA,NA,87,2025,0,0,87,None,0
+Reyansh,Mishra,student247@scholarship.test,9321813944,Female,2005-01-01,Father247,141336,Bihar,Other,Diploma,NA,After 10th,NA,89,2025,0,0,50,DCECE,1910
+Riya,Verma,student248@scholarship.test,9705104957,Female,2005-01-01,Father248,227778,Bihar,Other,Undergraduate,NA,NA,NA,78,2023,92,2025,50,JEE Mains,60753
+Myra,Gupta,student249@scholarship.test,9765145474,Male,2005-01-01,Father249,800000,Bihar,Patna,School,NA,NA,NA,50,2020,0,0,50,None,0
+Diya,Das,student250@scholarship.test,9484897501,Male,2005-01-01,Father250,100000,Bihar,Patna,Diploma,NA,After 10th,NA,85,2025,0,0,85,DCECE,2000
+Myra,Patel,student251@scholarship.test,9227213323,Male,2005-01-01,Father251,582689,Delhi,Other,School,NA,NA,NA,40,2020,0,0,50,None,0
+Myra,Patel,student252@scholarship.test,9487999234,Female,2005-01-01,Father252,90064,Bihar,Other,School,Class 11,NA,NA,70,2025,0,0,70,None,0
+Krishna,Sharma,student253@scholarship.test,9329877986,Female,2005-01-01,Father253,103541,Bihar,Other,Diploma,NA,After 10th,NA,91,2025,0,0,50,DCECE,1351
+Priya,Jha,student254@scholarship.test,9919207520,Female,2005-01-01,Father254,64070,Bihar,Other,Undergraduate,NA,NA,NA,87,2023,91,2025,50,JEE Mains,56013
+Vivaan,Verma,student255@scholarship.test,9786751110,Female,2005-01-01,Father255,800000,Bihar,Patna,School,NA,NA,NA,50,2020,0,0,50,None,0
+Ishaan,Singh,student256@scholarship.test,9218935647,Female,2005-01-01,Father256,100000,Bihar,Patna,Diploma,NA,After 10th,NA,85,2025,0,0,85,DCECE,2000
+Vivaan,Gupta,student257@scholarship.test,9724942236,Male,2005-01-01,Father257,786831,UP,Other,School,NA,NA,NA,49,2020,0,0,50,None,0
+Ayaan,Singh,student258@scholarship.test,9596432140,Male,2005-01-01,Father258,121521,Bihar,Other,School,Class 11,NA,NA,75,2025,0,0,75,None,0
+Aarav,Das,student259@scholarship.test,9248867387,Female,2005-01-01,Father259,48235,Bihar,Other,Diploma,NA,After 10th,NA,83,2025,0,0,50,DCECE,1663
+Amit,Kumar,student260@scholarship.test,9135432580,Female,2005-01-01,Father260,210341,Bihar,Other,Undergraduate,NA,NA,NA,93,2023,75,2025,50,JEE Mains,26581
+Aarav,Mishra,student261@scholarship.test,9516363638,Male,2005-01-01,Father261,800000,Bihar,Patna,School,NA,NA,NA,50,2020,0,0,50,None,0
+Aditya,Das,student262@scholarship.test,9975799068,Male,2005-01-01,Father262,100000,Bihar,Patna,Diploma,NA,After 10th,NA,85,2025,0,0,85,DCECE,2000
+Vivaan,Gupta,student263@scholarship.test,9297666437,Male,2005-01-01,Father263,575625,UP,Other,School,NA,NA,NA,45,2020,0,0,50,None,0
+Ayaan,Kumar,student264@scholarship.test,9151297321,Male,2005-01-01,Father264,60665,Bihar,Other,School,Class 11,NA,NA,80,2025,0,0,80,None,0
+Riya,Singh,student265@scholarship.test,9366109214,Male,2005-01-01,Father265,109153,Bihar,Other,Diploma,NA,After 10th,NA,89,2025,0,0,50,DCECE,3820
+Arjun,Gupta,student266@scholarship.test,9529969542,Male,2005-01-01,Father266,77917,Bihar,Other,Undergraduate,NA,NA,NA,77,2023,89,2025,50,JEE Mains,78534
+Aadhya,Sharma,student267@scholarship.test,9694066888,Male,2005-01-01,Father267,800000,Bihar,Patna,School,NA,NA,NA,50,2020,0,0,50,None,0
+Arjun,Yadav,student268@scholarship.test,9353104657,Female,2005-01-01,Father268,100000,Bihar,Patna,Diploma,NA,After 10th,NA,85,2025,0,0,85,DCECE,2000
+Myra,Sharma,student269@scholarship.test,9696149178,Female,2005-01-01,Father269,665693,Delhi,Other,School,NA,NA,NA,46,2020,0,0,50,None,0
+Myra,Das,student270@scholarship.test,9604163681,Female,2005-01-01,Father270,218307,Bihar,Other,School,Class 11,NA,NA,92,2025,0,0,92,None,0
+Myra,Verma,student271@scholarship.test,9522868224,Female,2005-01-01,Father271,75516,Bihar,Other,Diploma,NA,After 10th,NA,95,2025,0,0,50,DCECE,3773
+Saanvi,Verma,student272@scholarship.test,9475218322,Female,2005-01-01,Father272,235387,Bihar,Other,Undergraduate,NA,NA,NA,76,2023,75,2025,50,JEE Mains,37228
+Krishna,Yadav,student273@scholarship.test,9386292757,Female,2005-01-01,Father273,800000,Bihar,Patna,School,NA,NA,NA,50,2020,0,0,50,None,0
+Vihaan,Kumar,student274@scholarship.test,9609986864,Male,2005-01-01,Father274,100000,Bihar,Patna,Diploma,NA,After 10th,NA,85,2025,0,0,85,DCECE,2000
+Myra,Das,student275@scholarship.test,9659458357,Female,2005-01-01,Father275,701700,UP,Other,School,NA,NA,NA,45,2020,0,0,50,None,0
+Ananya,Gupta,student276@scholarship.test,9480329625,Female,2005-01-01,Father276,192655,Bihar,Other,School,Class 11,NA,NA,77,2025,0,0,77,None,0
+Vivaan,Kumar,student277@scholarship.test,9993279437,Female,2005-01-01,Father277,90684,Bihar,Other,Diploma,NA,After 10th,NA,84,2025,0,0,50,DCECE,610
+Aarav,Patel,student278@scholarship.test,9991910360,Male,2005-01-01,Father278,236941,Bihar,Other,Undergraduate,NA,NA,NA,78,2023,91,2025,50,JEE Mains,36172
+Sneha,Gupta,student279@scholarship.test,9524441102,Female,2005-01-01,Father279,800000,Bihar,Patna,School,NA,NA,NA,50,2020,0,0,50,None,0
+Rahul,Kumar,student280@scholarship.test,9559344851,Male,2005-01-01,Father280,100000,Bihar,Patna,Diploma,NA,After 10th,NA,85,2025,0,0,85,DCECE,2000
+Myra,Yadav,student281@scholarship.test,9452030651,Female,2005-01-01,Father281,896066,West Bengal,Other,School,NA,NA,NA,48,2020,0,0,50,None,0
+Aditya,Jha,student282@scholarship.test,9697914858,Female,2005-01-01,Father282,203281,Bihar,Other,School,Class 11,NA,NA,68,2025,0,0,68,None,0
+Priya,Verma,student283@scholarship.test,9477252807,Male,2005-01-01,Father283,152332,Bihar,Other,Diploma,NA,After 10th,NA,91,2025,0,0,50,DCECE,2740
+Vivaan,Sharma,student284@scholarship.test,9362264882,Female,2005-01-01,Father284,156649,Bihar,Other,Undergraduate,NA,NA,NA,77,2023,79,2025,50,JEE Mains,36990
+Ishaan,Sharma,student285@scholarship.test,9316075187,Female,2005-01-01,Father285,800000,Bihar,Patna,School,NA,NA,NA,50,2020,0,0,50,None,0
+Arjun,Jha,student286@scholarship.test,9546208150,Female,2005-01-01,Father286,100000,Bihar,Patna,Diploma,NA,After 10th,NA,85,2025,0,0,85,DCECE,2000
+Anvi,Das,student287@scholarship.test,9893033242,Male,2005-01-01,Father287,779616,Maharashtra,Other,School,NA,NA,NA,49,2020,0,0,50,None,0
+Vivaan,Mishra,student288@scholarship.test,9524248923,Female,2005-01-01,Father288,52519,Bihar,Other,School,Class 11,NA,NA,80,2025,0,0,80,None,0
+Arjun,Gupta,student289@scholarship.test,9688673365,Male,2005-01-01,Father289,45644,Bihar,Other,Diploma,NA,After 10th,NA,97,2025,0,0,50,DCECE,1727
+Anvi,Yadav,student290@scholarship.test,9462861793,Female,2005-01-01,Father290,77955,Bihar,Other,Undergraduate,NA,NA,NA,94,2023,79,2025,50,JEE Mains,2445
+Pari,Kumar,student291@scholarship.test,9265890700,Female,2005-01-01,Father291,800000,Bihar,Patna,School,NA,NA,NA,50,2020,0,0,50,None,0
+Vivaan,Singh,student292@scholarship.test,9674648613,Female,2005-01-01,Father292,100000,Bihar,Patna,Diploma,NA,After 10th,NA,85,2025,0,0,85,DCECE,2000
+Ananya,Mishra,student293@scholarship.test,9725845735,Female,2005-01-01,Father293,898488,UP,Other,School,NA,NA,NA,49,2020,0,0,50,None,0
+Vihaan,Jha,student294@scholarship.test,9333298569,Female,2005-01-01,Father294,83251,Bihar,Other,School,Class 11,NA,NA,66,2025,0,0,66,None,0
+Aadhya,Das,student295@scholarship.test,9792898815,Male,2005-01-01,Father295,49479,Bihar,Other,Diploma,NA,After 10th,NA,88,2025,0,0,50,DCECE,1832
+Sai,Mishra,student296@scholarship.test,9794247245,Female,2005-01-01,Father296,128774,Bihar,Other,Undergraduate,NA,NA,NA,81,2023,86,2025,50,JEE Mains,54210
+Arjun,Verma,student297@scholarship.test,9935457997,Female,2005-01-01,Father297,800000,Bihar,Patna,School,NA,NA,NA,50,2020,0,0,50,None,0
+Riya,Gupta,student298@scholarship.test,9784512967,Male,2005-01-01,Father298,100000,Bihar,Patna,Diploma,NA,After 10th,NA,85,2025,0,0,85,DCECE,2000
+Vivaan,Singh,student299@scholarship.test,9383974089,Female,2005-01-01,Father299,819066,Delhi,Other,School,NA,NA,NA,44,2020,0,0,50,None,0
+Aarav,Mishra,student300@scholarship.test,9506305402,Female,2005-01-01,Father300,55790,Bihar,Other,School,Class 11,NA,NA,65,2025,0,0,65,None,0
+Arjun,Singh,student301@scholarship.test,9787269632,Male,2005-01-01,Father301,163729,Bihar,Other,Diploma,NA,After 10th,NA,94,2025,0,0,50,DCECE,585
+Saanvi,Gupta,student302@scholarship.test,9764347067,Male,2005-01-01,Father302,230279,Bihar,Other,Undergraduate,NA,NA,NA,80,2023,78,2025,50,JEE Mains,35910
+Sai,Sharma,student303@scholarship.test,9817050253,Male,2005-01-01,Father303,800000,Bihar,Patna,School,NA,NA,NA,50,2020,0,0,50,None,0
+Priya,Jha,student304@scholarship.test,9445097548,Male,2005-01-01,Father304,100000,Bihar,Patna,Diploma,NA,After 10th,NA,85,2025,0,0,85,DCECE,2000
+Aditya,Gupta,student305@scholarship.test,9856265147,Female,2005-01-01,Father305,818501,Maharashtra,Other,School,NA,NA,NA,41,2020,0,0,50,None,0
+Ayaan,Yadav,student306@scholarship.test,9935981819,Male,2005-01-01,Father306,230485,Bihar,Other,School,Class 11,NA,NA,75,2025,0,0,75,None,0
+Sneha,Sharma,student307@scholarship.test,9762734992,Female,2005-01-01,Father307,151321,Bihar,Other,Diploma,NA,After 10th,NA,98,2025,0,0,50,DCECE,1269
+Ayaan,Singh,student308@scholarship.test,9405128611,Male,2005-01-01,Father308,134839,Bihar,Other,Undergraduate,NA,NA,NA,76,2023,79,2025,50,JEE Mains,53416
+Rahul,Mishra,student309@scholarship.test,9655760678,Male,2005-01-01,Father309,800000,Bihar,Patna,School,NA,NA,NA,50,2020,0,0,50,None,0
+Krishna,Patel,student310@scholarship.test,9571655212,Male,2005-01-01,Father310,100000,Bihar,Patna,Diploma,NA,After 10th,NA,85,2025,0,0,85,DCECE,2000
+Riya,Singh,student311@scholarship.test,9202674201,Male,2005-01-01,Father311,642733,West Bengal,Other,School,NA,NA,NA,40,2020,0,0,50,None,0
+Sai,Singh,student312@scholarship.test,9923250410,Male,2005-01-01,Father312,89487,Bihar,Other,School,Class 11,NA,NA,90,2025,0,0,90,None,0
+Vivaan,Yadav,student313@scholarship.test,9799718310,Female,2005-01-01,Father313,49587,Bihar,Other,Diploma,NA,After 10th,NA,96,2025,0,0,50,DCECE,1190
+Vivaan,Das,student314@scholarship.test,9515364036,Male,2005-01-01,Father314,120229,Bihar,Other,Undergraduate,NA,NA,NA,75,2023,93,2025,50,JEE Mains,13816
+Rahul,Kumar,student315@scholarship.test,9737391620,Male,2005-01-01,Father315,800000,Bihar,Patna,School,NA,NA,NA,50,2020,0,0,50,None,0
+Anvi,Verma,student316@scholarship.test,9300939318,Male,2005-01-01,Father316,100000,Bihar,Patna,Diploma,NA,After 10th,NA,85,2025,0,0,85,DCECE,2000
+Vivaan,Gupta,student317@scholarship.test,9138118093,Male,2005-01-01,Father317,674655,West Bengal,Other,School,NA,NA,NA,45,2020,0,0,50,None,0
+Myra,Singh,student318@scholarship.test,9582437363,Male,2005-01-01,Father318,59397,Bihar,Other,School,Class 11,NA,NA,87,2025,0,0,87,None,0
+Myra,Das,student319@scholarship.test,9181198322,Female,2005-01-01,Father319,123509,Bihar,Other,Diploma,NA,After 10th,NA,91,2025,0,0,50,DCECE,775
+Arjun,Gupta,student320@scholarship.test,9217627207,Male,2005-01-01,Father320,226107,Bihar,Other,Undergraduate,NA,NA,NA,94,2023,85,2025,50,JEE Mains,23647
+Sai,Sharma,student321@scholarship.test,9358582233,Male,2005-01-01,Father321,800000,Bihar,Patna,School,NA,NA,NA,50,2020,0,0,50,None,0
+Aditya,Yadav,student322@scholarship.test,9693637131,Male,2005-01-01,Father322,100000,Bihar,Patna,Diploma,NA,After 10th,NA,85,2025,0,0,85,DCECE,2000
+Arjun,Yadav,student323@scholarship.test,9281305427,Female,2005-01-01,Father323,728545,UP,Other,School,NA,NA,NA,49,2020,0,0,50,None,0
+Arjun,Mishra,student324@scholarship.test,9824876593,Female,2005-01-01,Father324,234265,Bihar,Other,School,Class 11,NA,NA,89,2025,0,0,89,None,0
+Anvi,Das,student325@scholarship.test,9288393845,Male,2005-01-01,Father325,118363,Bihar,Other,Diploma,NA,After 10th,NA,94,2025,0,0,50,DCECE,379
+Ananya,Gupta,student326@scholarship.test,9846476513,Male,2005-01-01,Father326,135289,Bihar,Other,Undergraduate,NA,NA,NA,75,2023,89,2025,50,JEE Mains,16622
+Arjun,Mishra,student327@scholarship.test,9333131978,Male,2005-01-01,Father327,800000,Bihar,Patna,School,NA,NA,NA,50,2020,0,0,50,None,0
+Riya,Yadav,student328@scholarship.test,9120077211,Male,2005-01-01,Father328,100000,Bihar,Patna,Diploma,NA,After 10th,NA,85,2025,0,0,85,DCECE,2000
+Ayaan,Das,student329@scholarship.test,9246950055,Male,2005-01-01,Father329,937408,Delhi,Other,School,NA,NA,NA,45,2020,0,0,50,None,0
+Priya,Jha,student330@scholarship.test,9198126922,Male,2005-01-01,Father330,68492,Bihar,Other,School,Class 11,NA,NA,94,2025,0,0,94,None,0
+Krishna,Das,student331@scholarship.test,9662636674,Female,2005-01-01,Father331,69340,Bihar,Other,Diploma,NA,After 10th,NA,82,2025,0,0,50,DCECE,2700
+Aadhya,Kumar,student332@scholarship.test,9968896877,Male,2005-01-01,Father332,244552,Bihar,Other,Undergraduate,NA,NA,NA,82,2023,90,2025,50,JEE Mains,15180
+Reyansh,Das,student333@scholarship.test,9644117802,Female,2005-01-01,Father333,800000,Bihar,Patna,School,NA,NA,NA,50,2020,0,0,50,None,0
+Aditya,Das,student334@scholarship.test,9325566810,Female,2005-01-01,Father334,100000,Bihar,Patna,Diploma,NA,After 10th,NA,85,2025,0,0,85,DCECE,2000
+Sneha,Kumar,student335@scholarship.test,9411809083,Male,2005-01-01,Father335,853187,UP,Other,School,NA,NA,NA,50,2020,0,0,50,None,0
+Aditya,Gupta,student336@scholarship.test,9789823960,Female,2005-01-01,Father336,172147,Bihar,Other,School,Class 11,NA,NA,85,2025,0,0,85,None,0
+Ishaan,Das,student337@scholarship.test,9962864741,Female,2005-01-01,Father337,69359,Bihar,Other,Diploma,NA,After 10th,NA,91,2025,0,0,50,DCECE,2232
+Ishaan,Mishra,student338@scholarship.test,9501559309,Female,2005-01-01,Father338,82022,Bihar,Other,Undergraduate,NA,NA,NA,83,2023,75,2025,50,JEE Mains,41569
+Aditya,Verma,student339@scholarship.test,9755276027,Male,2005-01-01,Father339,800000,Bihar,Patna,School,NA,NA,NA,50,2020,0,0,50,None,0
+Sneha,Yadav,student340@scholarship.test,9589897877,Male,2005-01-01,Father340,100000,Bihar,Patna,Diploma,NA,After 10th,NA,85,2025,0,0,85,DCECE,2000
+Aditya,Kumar,student341@scholarship.test,9569633225,Female,2005-01-01,Father341,635129,Delhi,Other,School,NA,NA,NA,42,2020,0,0,50,None,0
+Diya,Verma,student342@scholarship.test,9930354212,Female,2005-01-01,Father342,216703,Bihar,Other,School,Class 11,NA,NA,94,2025,0,0,94,None,0
+Aarav,Singh,student343@scholarship.test,9932948206,Male,2005-01-01,Father343,84520,Bihar,Other,Diploma,NA,After 10th,NA,81,2025,0,0,50,DCECE,1741
+Aarav,Mishra,student344@scholarship.test,9912359265,Female,2005-01-01,Father344,149733,Bihar,Other,Undergraduate,NA,NA,NA,89,2023,85,2025,50,JEE Mains,29838
+Krishna,Mishra,student345@scholarship.test,9391305813,Female,2005-01-01,Father345,800000,Bihar,Patna,School,NA,NA,NA,50,2020,0,0,50,None,0
+Saanvi,Sharma,student346@scholarship.test,9726423912,Male,2005-01-01,Father346,100000,Bihar,Patna,Diploma,NA,After 10th,NA,85,2025,0,0,85,DCECE,2000
+Sai,Patel,student347@scholarship.test,9474438184,Female,2005-01-01,Father347,822831,Maharashtra,Other,School,NA,NA,NA,47,2020,0,0,50,None,0
+Aditya,Mishra,student348@scholarship.test,9513451666,Female,2005-01-01,Father348,129040,Bihar,Other,School,Class 11,NA,NA,81,2025,0,0,81,None,0
+Riya,Verma,student349@scholarship.test,9397036141,Female,2005-01-01,Father349,113925,Bihar,Other,Diploma,NA,After 10th,NA,95,2025,0,0,50,DCECE,2982
+Anvi,Sharma,student350@scholarship.test,9836683151,Female,2005-01-01,Father350,145444,Bihar,Other,Undergraduate,NA,NA,NA,85,2023,85,2025,50,JEE Mains,70255
+Aditya,Singh,student351@scholarship.test,9569772855,Female,2005-01-01,Father351,800000,Bihar,Patna,School,NA,NA,NA,50,2020,0,0,50,None,0
+Vivaan,Kumar,student352@scholarship.test,9535115282,Female,2005-01-01,Father352,100000,Bihar,Patna,Diploma,NA,After 10th,NA,85,2025,0,0,85,DCECE,2000
+Krishna,Gupta,student353@scholarship.test,9470882473,Female,2005-01-01,Father353,778040,West Bengal,Other,School,NA,NA,NA,50,2020,0,0,50,None,0
+Pari,Singh,student354@scholarship.test,9776668760,Female,2005-01-01,Father354,177979,Bihar,Other,School,Class 11,NA,NA,91,2025,0,0,91,None,0
+Sai,Gupta,student355@scholarship.test,9296182322,Female,2005-01-01,Father355,95726,Bihar,Other,Diploma,NA,After 10th,NA,87,2025,0,0,50,DCECE,3430
+Ayaan,Singh,student356@scholarship.test,9392101852,Female,2005-01-01,Father356,214029,Bihar,Other,Undergraduate,NA,NA,NA,87,2023,76,2025,50,JEE Mains,57463
+Saanvi,Gupta,student357@scholarship.test,9227146132,Male,2005-01-01,Father357,800000,Bihar,Patna,School,NA,NA,NA,50,2020,0,0,50,None,0
+Rahul,Mishra,student358@scholarship.test,9819083872,Female,2005-01-01,Father358,100000,Bihar,Patna,Diploma,NA,After 10th,NA,85,2025,0,0,85,DCECE,2000
+Sneha,Patel,student359@scholarship.test,9898645417,Male,2005-01-01,Father359,807980,UP,Other,School,NA,NA,NA,50,2020,0,0,50,None,0
+Aadhya,Jha,student360@scholarship.test,9489102353,Female,2005-01-01,Father360,189048,Bihar,Other,School,Class 11,NA,NA,82,2025,0,0,82,None,0
+Priya,Kumar,student361@scholarship.test,9220304585,Female,2005-01-01,Father361,62368,Bihar,Other,Diploma,NA,After 10th,NA,91,2025,0,0,50,DCECE,175
+Riya,Mishra,student362@scholarship.test,9241209528,Female,2005-01-01,Father362,83718,Bihar,Other,Undergraduate,NA,NA,NA,88,2023,89,2025,50,JEE Mains,78091
+Rahul,Patel,student363@scholarship.test,9369615522,Female,2005-01-01,Father363,800000,Bihar,Patna,School,NA,NA,NA,50,2020,0,0,50,None,0
+Aarav,Gupta,student364@scholarship.test,9657517326,Male,2005-01-01,Father364,100000,Bihar,Patna,Diploma,NA,After 10th,NA,85,2025,0,0,85,DCECE,2000
+Aarav,Yadav,student365@scholarship.test,9161944476,Male,2005-01-01,Father365,505379,Maharashtra,Other,School,NA,NA,NA,40,2020,0,0,50,None,0
+Priya,Kumar,student366@scholarship.test,9899048662,Female,2005-01-01,Father366,164805,Bihar,Other,School,Class 11,NA,NA,83,2025,0,0,83,None,0
+Amit,Gupta,student367@scholarship.test,9752862056,Female,2005-01-01,Father367,155993,Bihar,Other,Diploma,NA,After 10th,NA,83,2025,0,0,50,DCECE,164
+Vihaan,Das,student368@scholarship.test,9154423188,Female,2005-01-01,Father368,199361,Bihar,Other,Undergraduate,NA,NA,NA,89,2023,87,2025,50,JEE Mains,27100
+Priya,Patel,student369@scholarship.test,9842679902,Male,2005-01-01,Father369,800000,Bihar,Patna,School,NA,NA,NA,50,2020,0,0,50,None,0
+Ayaan,Das,student370@scholarship.test,9928321654,Male,2005-01-01,Father370,100000,Bihar,Patna,Diploma,NA,After 10th,NA,85,2025,0,0,85,DCECE,2000
+Amit,Mishra,student371@scholarship.test,9474601699,Female,2005-01-01,Father371,580203,Delhi,Other,School,NA,NA,NA,45,2020,0,0,50,None,0
+Ayaan,Verma,student372@scholarship.test,9656107131,Male,2005-01-01,Father372,248581,Bihar,Other,School,Class 11,NA,NA,79,2025,0,0,79,None,0
+Rahul,Verma,student373@scholarship.test,9678860958,Female,2005-01-01,Father373,154960,Bihar,Other,Diploma,NA,After 10th,NA,91,2025,0,0,50,DCECE,2140
+Krishna,Yadav,student374@scholarship.test,9797177073,Female,2005-01-01,Father374,203923,Bihar,Other,Undergraduate,NA,NA,NA,76,2023,81,2025,50,JEE Mains,31316
+Aditya,Singh,student375@scholarship.test,9787038653,Female,2005-01-01,Father375,800000,Bihar,Patna,School,NA,NA,NA,50,2020,0,0,50,None,0
+Arjun,Das,student376@scholarship.test,9909761701,Female,2005-01-01,Father376,100000,Bihar,Patna,Diploma,NA,After 10th,NA,85,2025,0,0,85,DCECE,2000
+Rahul,Das,student377@scholarship.test,9315733637,Male,2005-01-01,Father377,670716,UP,Other,School,NA,NA,NA,46,2020,0,0,50,None,0
+Saanvi,Patel,student378@scholarship.test,9380880157,Male,2005-01-01,Father378,156332,Bihar,Other,School,Class 11,NA,NA,87,2025,0,0,87,None,0
+Krishna,Kumar,student379@scholarship.test,9126308511,Female,2005-01-01,Father379,124212,Bihar,Other,Diploma,NA,After 10th,NA,96,2025,0,0,50,DCECE,3674
+Ishaan,Singh,student380@scholarship.test,9322011083,Male,2005-01-01,Father380,97326,Bihar,Other,Undergraduate,NA,NA,NA,79,2023,94,2025,50,JEE Mains,1677
+Aadhya,Mishra,student381@scholarship.test,9130731892,Female,2005-01-01,Father381,800000,Bihar,Patna,School,NA,NA,NA,50,2020,0,0,50,None,0
+Pari,Yadav,student382@scholarship.test,9671971348,Male,2005-01-01,Father382,100000,Bihar,Patna,Diploma,NA,After 10th,NA,85,2025,0,0,85,DCECE,2000
+Priya,Das,student383@scholarship.test,9610422581,Male,2005-01-01,Father383,568566,Delhi,Other,School,NA,NA,NA,49,2020,0,0,50,None,0
+Aarav,Sharma,student384@scholarship.test,9927542784,Female,2005-01-01,Father384,71366,Bihar,Other,School,Class 11,NA,NA,93,2025,0,0,93,None,0
+Vivaan,Patel,student385@scholarship.test,9757944621,Male,2005-01-01,Father385,57571,Bihar,Other,Diploma,NA,After 10th,NA,95,2025,0,0,50,DCECE,3709
+Arjun,Yadav,student386@scholarship.test,9467363380,Male,2005-01-01,Father386,173559,Bihar,Other,Undergraduate,NA,NA,NA,89,2023,77,2025,50,JEE Mains,20369
+Sai,Das,student387@scholarship.test,9631147967,Female,2005-01-01,Father387,800000,Bihar,Patna,School,NA,NA,NA,50,2020,0,0,50,None,0
+Aarav,Mishra,student388@scholarship.test,9406140556,Male,2005-01-01,Father388,100000,Bihar,Patna,Diploma,NA,After 10th,NA,85,2025,0,0,85,DCECE,2000
+Priya,Gupta,student389@scholarship.test,9868519811,Female,2005-01-01,Father389,853066,West Bengal,Other,School,NA,NA,NA,50,2020,0,0,50,None,0
+Ananya,Jha,student390@scholarship.test,9817383604,Female,2005-01-01,Father390,88979,Bihar,Other,School,Class 11,NA,NA,72,2025,0,0,72,None,0
+Sneha,Jha,student391@scholarship.test,9483660336,Female,2005-01-01,Father391,130946,Bihar,Other,Diploma,NA,After 10th,NA,95,2025,0,0,50,DCECE,1950
+Aditya,Patel,student392@scholarship.test,9598762888,Female,2005-01-01,Father392,148989,Bihar,Other,Undergraduate,NA,NA,NA,85,2023,82,2025,50,JEE Mains,43903
+Sai,Das,student393@scholarship.test,9970764312,Female,2005-01-01,Father393,800000,Bihar,Patna,School,NA,NA,NA,50,2020,0,0,50,None,0
+Amit,Yadav,student394@scholarship.test,9340949238,Male,2005-01-01,Father394,100000,Bihar,Patna,Diploma,NA,After 10th,NA,85,2025,0,0,85,DCECE,2000
+Sneha,Sharma,student395@scholarship.test,9892288538,Male,2005-01-01,Father395,555077,West Bengal,Other,School,NA,NA,NA,45,2020,0,0,50,None,0
+Ananya,Gupta,student396@scholarship.test,9408675987,Female,2005-01-01,Father396,108644,Bihar,Other,School,Class 11,NA,NA,85,2025,0,0,85,None,0
+Ishaan,Jha,student397@scholarship.test,9715424393,Male,2005-01-01,Father397,161441,Bihar,Other,Diploma,NA,After 10th,NA,83,2025,0,0,50,DCECE,2058
+Saanvi,Verma,student398@scholarship.test,9380418265,Female,2005-01-01,Father398,93773,Bihar,Other,Undergraduate,NA,NA,NA,95,2023,90,2025,50,JEE Mains,39417
+Pari,Mishra,student399@scholarship.test,9672118494,Male,2005-01-01,Father399,800000,Bihar,Patna,School,NA,NA,NA,50,2020,0,0,50,None,0
+Krishna,Gupta,student400@scholarship.test,9447298743,Female,2005-01-01,Father400,100000,Bihar,Patna,Diploma,NA,After 10th,NA,85,2025,0,0,85,DCECE,2000
+Krishna,Gupta,student401@scholarship.test,9183271780,Male,2005-01-01,Father401,599193,Maharashtra,Other,School,NA,NA,NA,49,2020,0,0,50,None,0
+Rahul,Das,student402@scholarship.test,9640260689,Male,2005-01-01,Father402,226116,Bihar,Other,School,Class 11,NA,NA,82,2025,0,0,82,None,0
+Ananya,Patel,student403@scholarship.test,9392554895,Female,2005-01-01,Father403,77162,Bihar,Other,Diploma,NA,After 10th,NA,87,2025,0,0,50,DCECE,2364
+Ayaan,Singh,student404@scholarship.test,9875042824,Female,2005-01-01,Father404,93871,Bihar,Other,Undergraduate,NA,NA,NA,92,2023,83,2025,50,JEE Mains,70734
+Myra,Mishra,student405@scholarship.test,9371604803,Female,2005-01-01,Father405,800000,Bihar,Patna,School,NA,NA,NA,50,2020,0,0,50,None,0
+Aditya,Singh,student406@scholarship.test,9298548543,Female,2005-01-01,Father406,100000,Bihar,Patna,Diploma,NA,After 10th,NA,85,2025,0,0,85,DCECE,2000
+Ayaan,Kumar,student407@scholarship.test,9505865479,Male,2005-01-01,Father407,678089,West Bengal,Other,School,NA,NA,NA,41,2020,0,0,50,None,0
+Rahul,Verma,student408@scholarship.test,9865441636,Male,2005-01-01,Father408,227841,Bihar,Other,School,Class 11,NA,NA,87,2025,0,0,87,None,0
+Sai,Kumar,student409@scholarship.test,9494250892,Male,2005-01-01,Father409,127469,Bihar,Other,Diploma,NA,After 10th,NA,83,2025,0,0,50,DCECE,3748
+Myra,Singh,student410@scholarship.test,9469124067,Male,2005-01-01,Father410,166997,Bihar,Other,Undergraduate,NA,NA,NA,89,2023,85,2025,50,JEE Mains,47946
+Saanvi,Sharma,student411@scholarship.test,9109461119,Male,2005-01-01,Father411,800000,Bihar,Patna,School,NA,NA,NA,50,2020,0,0,50,None,0
+Sneha,Mishra,student412@scholarship.test,9822845656,Male,2005-01-01,Father412,100000,Bihar,Patna,Diploma,NA,After 10th,NA,85,2025,0,0,85,DCECE,2000
+Reyansh,Sharma,student413@scholarship.test,9946504744,Female,2005-01-01,Father413,657127,UP,Other,School,NA,NA,NA,49,2020,0,0,50,None,0
+Pari,Jha,student414@scholarship.test,9940374899,Male,2005-01-01,Father414,89324,Bihar,Other,School,Class 11,NA,NA,77,2025,0,0,77,None,0
+Aditya,Sharma,student415@scholarship.test,9844385041,Female,2005-01-01,Father415,61569,Bihar,Other,Diploma,NA,After 10th,NA,93,2025,0,0,50,DCECE,3252
+Aditya,Patel,student416@scholarship.test,9976160178,Male,2005-01-01,Father416,225904,Bihar,Other,Undergraduate,NA,NA,NA,82,2023,80,2025,50,JEE Mains,69316
+Saanvi,Gupta,student417@scholarship.test,9404792115,Male,2005-01-01,Father417,800000,Bihar,Patna,School,NA,NA,NA,50,2020,0,0,50,None,0
+Arjun,Patel,student418@scholarship.test,9334623398,Female,2005-01-01,Father418,100000,Bihar,Patna,Diploma,NA,After 10th,NA,85,2025,0,0,85,DCECE,2000
+Aarav,Singh,student419@scholarship.test,9330553615,Female,2005-01-01,Father419,652060,West Bengal,Other,School,NA,NA,NA,49,2020,0,0,50,None,0
+Vivaan,Singh,student420@scholarship.test,9573051044,Female,2005-01-01,Father420,150011,Bihar,Other,School,Class 11,NA,NA,93,2025,0,0,93,None,0
+Arjun,Patel,student421@scholarship.test,9418937904,Male,2005-01-01,Father421,45987,Bihar,Other,Diploma,NA,After 10th,NA,83,2025,0,0,50,DCECE,1734
+Krishna,Das,student422@scholarship.test,9423634107,Male,2005-01-01,Father422,238831,Bihar,Other,Undergraduate,NA,NA,NA,90,2023,87,2025,50,JEE Mains,64156
+Vihaan,Sharma,student423@scholarship.test,9234609358,Male,2005-01-01,Father423,800000,Bihar,Patna,School,NA,NA,NA,50,2020,0,0,50,None,0
+Riya,Yadav,student424@scholarship.test,9186484899,Female,2005-01-01,Father424,100000,Bihar,Patna,Diploma,NA,After 10th,NA,85,2025,0,0,85,DCECE,2000
+Aarav,Kumar,student425@scholarship.test,9693853044,Male,2005-01-01,Father425,986091,West Bengal,Other,School,NA,NA,NA,47,2020,0,0,50,None,0
+Anvi,Mishra,student426@scholarship.test,9203422477,Male,2005-01-01,Father426,226005,Bihar,Other,School,Class 11,NA,NA,91,2025,0,0,91,None,0
+Aadhya,Sharma,student427@scholarship.test,9220931353,Female,2005-01-01,Father427,163024,Bihar,Other,Diploma,NA,After 10th,NA,88,2025,0,0,50,DCECE,1469
+Ananya,Patel,student428@scholarship.test,9285358762,Female,2005-01-01,Father428,126892,Bihar,Other,Undergraduate,NA,NA,NA,90,2023,92,2025,50,JEE Mains,79964
+Sneha,Gupta,student429@scholarship.test,9914405327,Male,2005-01-01,Father429,800000,Bihar,Patna,School,NA,NA,NA,50,2020,0,0,50,None,0
+Sai,Singh,student430@scholarship.test,9433547432,Male,2005-01-01,Father430,100000,Bihar,Patna,Diploma,NA,After 10th,NA,85,2025,0,0,85,DCECE,2000
+Anvi,Gupta,student431@scholarship.test,9530632177,Female,2005-01-01,Father431,640446,Maharashtra,Other,School,NA,NA,NA,40,2020,0,0,50,None,0
+Amit,Patel,student432@scholarship.test,9124769058,Male,2005-01-01,Father432,175519,Bihar,Other,School,Class 11,NA,NA,91,2025,0,0,91,None,0
+Amit,Yadav,student433@scholarship.test,9185233722,Female,2005-01-01,Father433,175928,Bihar,Other,Diploma,NA,After 10th,NA,95,2025,0,0,50,DCECE,1875
+Riya,Das,student434@scholarship.test,9888974432,Female,2005-01-01,Father434,114368,Bihar,Other,Undergraduate,NA,NA,NA,85,2023,92,2025,50,JEE Mains,47850
+Riya,Verma,student435@scholarship.test,9809975943,Female,2005-01-01,Father435,800000,Bihar,Patna,School,NA,NA,NA,50,2020,0,0,50,None,0
+Arjun,Das,student436@scholarship.test,9669022545,Male,2005-01-01,Father436,100000,Bihar,Patna,Diploma,NA,After 10th,NA,85,2025,0,0,85,DCECE,2000
+Rahul,Sharma,student437@scholarship.test,9846997257,Male,2005-01-01,Father437,970334,Delhi,Other,School,NA,NA,NA,43,2020,0,0,50,None,0
+Reyansh,Gupta,student438@scholarship.test,9745193848,Male,2005-01-01,Father438,176784,Bihar,Other,School,Class 11,NA,NA,76,2025,0,0,76,None,0
+Krishna,Patel,student439@scholarship.test,9498656947,Male,2005-01-01,Father439,74080,Bihar,Other,Diploma,NA,After 10th,NA,82,2025,0,0,50,DCECE,2410
+Aadhya,Patel,student440@scholarship.test,9701899967,Male,2005-01-01,Father440,144517,Bihar,Other,Undergraduate,NA,NA,NA,91,2023,87,2025,50,JEE Mains,29221
+Krishna,Kumar,student441@scholarship.test,9745668610,Female,2005-01-01,Father441,800000,Bihar,Patna,School,NA,NA,NA,50,2020,0,0,50,None,0
+Priya,Gupta,student442@scholarship.test,9988736710,Female,2005-01-01,Father442,100000,Bihar,Patna,Diploma,NA,After 10th,NA,85,2025,0,0,85,DCECE,2000
+Anvi,Patel,student443@scholarship.test,9714382819,Male,2005-01-01,Father443,872830,UP,Other,School,NA,NA,NA,43,2020,0,0,50,None,0
+Vihaan,Yadav,student444@scholarship.test,9475203089,Male,2005-01-01,Father444,112130,Bihar,Other,School,Class 11,NA,NA,81,2025,0,0,81,None,0
+Ishaan,Kumar,student445@scholarship.test,9427472453,Female,2005-01-01,Father445,179425,Bihar,Other,Diploma,NA,After 10th,NA,86,2025,0,0,50,DCECE,3336
+Arjun,Verma,student446@scholarship.test,9485388621,Male,2005-01-01,Father446,88494,Bihar,Other,Undergraduate,NA,NA,NA,77,2023,77,2025,50,JEE Mains,28456
+Amit,Jha,student447@scholarship.test,9194010904,Female,2005-01-01,Father447,800000,Bihar,Patna,School,NA,NA,NA,50,2020,0,0,50,None,0
+Pari,Das,student448@scholarship.test,9834097021,Female,2005-01-01,Father448,100000,Bihar,Patna,Diploma,NA,After 10th,NA,85,2025,0,0,85,DCECE,2000
+Aarav,Patel,student449@scholarship.test,9489930454,Female,2005-01-01,Father449,777407,West Bengal,Other,School,NA,NA,NA,47,2020,0,0,50,None,0
+Ayaan,Patel,student450@scholarship.test,9905374972,Female,2005-01-01,Father450,187046,Bihar,Other,School,Class 11,NA,NA,66,2025,0,0,66,None,0
+Anvi,Singh,student451@scholarship.test,9500287574,Female,2005-01-01,Father451,128624,Bihar,Other,Diploma,NA,After 10th,NA,92,2025,0,0,50,DCECE,3820
+Rahul,Kumar,student452@scholarship.test,9631763863,Male,2005-01-01,Father452,174544,Bihar,Other,Undergraduate,NA,NA,NA,89,2023,81,2025,50,JEE Mains,57086
+Reyansh,Jha,student453@scholarship.test,9900805431,Male,2005-01-01,Father453,800000,Bihar,Patna,School,NA,NA,NA,50,2020,0,0,50,None,0
+Aarav,Patel,student454@scholarship.test,9199680248,Male,2005-01-01,Father454,100000,Bihar,Patna,Diploma,NA,After 10th,NA,85,2025,0,0,85,DCECE,2000
+Diya,Kumar,student455@scholarship.test,9789026466,Male,2005-01-01,Father455,753497,West Bengal,Other,School,NA,NA,NA,42,2020,0,0,50,None,0
+Vivaan,Verma,student456@scholarship.test,9200168356,Male,2005-01-01,Father456,139187,Bihar,Other,School,Class 11,NA,NA,89,2025,0,0,89,None,0
+Rahul,Patel,student457@scholarship.test,9558355602,Female,2005-01-01,Father457,71601,Bihar,Other,Diploma,NA,After 10th,NA,90,2025,0,0,50,DCECE,2027
+Aarav,Kumar,student458@scholarship.test,9292921385,Female,2005-01-01,Father458,105125,Bihar,Other,Undergraduate,NA,NA,NA,76,2023,92,2025,50,JEE Mains,46563
+Riya,Sharma,student459@scholarship.test,9293774120,Male,2005-01-01,Father459,800000,Bihar,Patna,School,NA,NA,NA,50,2020,0,0,50,None,0
+Rahul,Jha,student460@scholarship.test,9213600590,Male,2005-01-01,Father460,100000,Bihar,Patna,Diploma,NA,After 10th,NA,85,2025,0,0,85,DCECE,2000
+Saanvi,Das,student461@scholarship.test,9582568622,Female,2005-01-01,Father461,716842,West Bengal,Other,School,NA,NA,NA,42,2020,0,0,50,None,0
+Diya,Verma,student462@scholarship.test,9550842363,Female,2005-01-01,Father462,199890,Bihar,Other,School,Class 11,NA,NA,85,2025,0,0,85,None,0
+Aadhya,Verma,student463@scholarship.test,9576750805,Female,2005-01-01,Father463,177041,Bihar,Other,Diploma,NA,After 10th,NA,91,2025,0,0,50,DCECE,1237
+Aadhya,Sharma,student464@scholarship.test,9666270529,Female,2005-01-01,Father464,77338,Bihar,Other,Undergraduate,NA,NA,NA,89,2023,79,2025,50,JEE Mains,30453
+Reyansh,Kumar,student465@scholarship.test,9651458810,Male,2005-01-01,Father465,800000,Bihar,Patna,School,NA,NA,NA,50,2020,0,0,50,None,0
+Ananya,Verma,student466@scholarship.test,9547764641,Male,2005-01-01,Father466,100000,Bihar,Patna,Diploma,NA,After 10th,NA,85,2025,0,0,85,DCECE,2000
+Rahul,Jha,student467@scholarship.test,9986236664,Female,2005-01-01,Father467,846179,Maharashtra,Other,School,NA,NA,NA,46,2020,0,0,50,None,0
+Krishna,Yadav,student468@scholarship.test,9336338414,Male,2005-01-01,Father468,137259,Bihar,Other,School,Class 11,NA,NA,72,2025,0,0,72,None,0
+Rahul,Singh,student469@scholarship.test,9550334249,Female,2005-01-01,Father469,63233,Bihar,Other,Diploma,NA,After 10th,NA,94,2025,0,0,50,DCECE,1310
+Arjun,Kumar,student470@scholarship.test,9881519831,Female,2005-01-01,Father470,192771,Bihar,Other,Undergraduate,NA,NA,NA,89,2023,85,2025,50,JEE Mains,6715
+Ishaan,Sharma,student471@scholarship.test,9399919742,Female,2005-01-01,Father471,800000,Bihar,Patna,School,NA,NA,NA,50,2020,0,0,50,None,0
+Sai,Jha,student472@scholarship.test,9197561850,Male,2005-01-01,Father472,100000,Bihar,Patna,Diploma,NA,After 10th,NA,85,2025,0,0,85,DCECE,2000
+Anvi,Gupta,student473@scholarship.test,9672265515,Female,2005-01-01,Father473,783190,Delhi,Other,School,NA,NA,NA,42,2020,0,0,50,None,0
+Riya,Yadav,student474@scholarship.test,9209927286,Female,2005-01-01,Father474,87086,Bihar,Other,School,Class 11,NA,NA,88,2025,0,0,88,None,0
+Anvi,Gupta,student475@scholarship.test,9747889789,Male,2005-01-01,Father475,91772,Bihar,Other,Diploma,NA,After 10th,NA,81,2025,0,0,50,DCECE,3476
+Anvi,Jha,student476@scholarship.test,9289954853,Female,2005-01-01,Father476,230170,Bihar,Other,Undergraduate,NA,NA,NA,75,2023,85,2025,50,JEE Mains,27146
+Ananya,Mishra,student477@scholarship.test,9866623139,Female,2005-01-01,Father477,800000,Bihar,Patna,School,NA,NA,NA,50,2020,0,0,50,None,0
+Sneha,Das,student478@scholarship.test,9902589402,Male,2005-01-01,Father478,100000,Bihar,Patna,Diploma,NA,After 10th,NA,85,2025,0,0,85,DCECE,2000
+Ishaan,Singh,student479@scholarship.test,9964037224,Female,2005-01-01,Father479,544642,West Bengal,Other,School,NA,NA,NA,45,2020,0,0,50,None,0
+Pari,Kumar,student480@scholarship.test,9537682869,Female,2005-01-01,Father480,96464,Bihar,Other,School,Class 11,NA,NA,95,2025,0,0,95,None,0
+Anvi,Verma,student481@scholarship.test,9125167260,Male,2005-01-01,Father481,164319,Bihar,Other,Diploma,NA,After 10th,NA,95,2025,0,0,50,DCECE,3011
+Ananya,Jha,student482@scholarship.test,9412639993,Male,2005-01-01,Father482,246226,Bihar,Other,Undergraduate,NA,NA,NA,95,2023,76,2025,50,JEE Mains,43872
+Saanvi,Jha,student483@scholarship.test,9938086481,Male,2005-01-01,Father483,800000,Bihar,Patna,School,NA,NA,NA,50,2020,0,0,50,None,0
+Ananya,Singh,student484@scholarship.test,9685531948,Female,2005-01-01,Father484,100000,Bihar,Patna,Diploma,NA,After 10th,NA,85,2025,0,0,85,DCECE,2000
+Priya,Mishra,student485@scholarship.test,9125171572,Female,2005-01-01,Father485,823663,Delhi,Other,School,NA,NA,NA,47,2020,0,0,50,None,0
+Myra,Jha,student486@scholarship.test,9300251183,Male,2005-01-01,Father486,128257,Bihar,Other,School,Class 11,NA,NA,65,2025,0,0,65,None,0
+Rahul,Singh,student487@scholarship.test,9462925829,Male,2005-01-01,Father487,145066,Bihar,Other,Diploma,NA,After 10th,NA,83,2025,0,0,50,DCECE,1115
+Ananya,Jha,student488@scholarship.test,9489181422,Female,2005-01-01,Father488,132689,Bihar,Other,Undergraduate,NA,NA,NA,93,2023,87,2025,50,JEE Mains,1763
+Arjun,Verma,student489@scholarship.test,9204357411,Male,2005-01-01,Father489,800000,Bihar,Patna,School,NA,NA,NA,50,2020,0,0,50,None,0
+Krishna,Mishra,student490@scholarship.test,9938912044,Male,2005-01-01,Father490,100000,Bihar,Patna,Diploma,NA,After 10th,NA,85,2025,0,0,85,DCECE,2000
+Rahul,Kumar,student491@scholarship.test,9305913899,Male,2005-01-01,Father491,674404,Maharashtra,Other,School,NA,NA,NA,50,2020,0,0,50,None,0
+Ayaan,Das,student492@scholarship.test,9114626124,Male,2005-01-01,Father492,190153,Bihar,Other,School,Class 11,NA,NA,65,2025,0,0,65,None,0
+Ishaan,Sharma,student493@scholarship.test,9394175979,Male,2005-01-01,Father493,146973,Bihar,Other,Diploma,NA,After 10th,NA,90,2025,0,0,50,DCECE,520
+Saanvi,Sharma,student494@scholarship.test,9196798393,Male,2005-01-01,Father494,153547,Bihar,Other,Undergraduate,NA,NA,NA,95,2023,93,2025,50,JEE Mains,22093
+Myra,Jha,student495@scholarship.test,9925964397,Female,2005-01-01,Father495,800000,Bihar,Patna,School,NA,NA,NA,50,2020,0,0,50,None,0
+Aarav,Verma,student496@scholarship.test,9832091833,Male,2005-01-01,Father496,100000,Bihar,Patna,Diploma,NA,After 10th,NA,85,2025,0,0,85,DCECE,2000
+Krishna,Verma,student497@scholarship.test,9542466929,Female,2005-01-01,Father497,904838,UP,Other,School,NA,NA,NA,46,2020,0,0,50,None,0
+Diya,Sharma,student498@scholarship.test,9665958168,Female,2005-01-01,Father498,97361,Bihar,Other,School,Class 11,NA,NA,68,2025,0,0,68,None,0
+Rahul,Verma,student499@scholarship.test,9878541378,Female,2005-01-01,Father499,112117,Bihar,Other,Diploma,NA,After 10th,NA,81,2025,0,0,50,DCECE,3295
+Amit,Yadav,student500@scholarship.test,9795534299,Female,2005-01-01,Father500,76464,Bihar,Other,Undergraduate,NA,NA,NA,95,2023,91,2025,50,JEE Mains,73877

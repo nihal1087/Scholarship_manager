@@ -1,0 +1,60 @@
+// prisma/schema.prisma
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model Student {
+  id             Int          @id @default(autoincrement())
+  firstName      String?
+  lastName       String?
+  email          String?      @unique
+  mobile         String?
+  gender         String?
+  dob            String?
+  state          String?
+  district       String?
+  income         Float?
+  category       String?
+  
+  // Academic Details
+  currentLevel   String?      // School, Diploma, Undergraduate
+  currentClass   String?
+  diplomaType    String?
+  percent10th    Float?
+  passYear10th   Int?
+  percent12th    Float?
+  passYear12th   Int?
+  percentLast    Float?
+  
+  // Entrance Exam
+  entranceExam   String?
+  entranceRank   Int?
+
+  // MISSING FIELD WAS HERE:
+  father         String?
+  
+  enrollments    Enrollment[]
+  createdAt      DateTime     @default(now())
+}
+
+model Scheme {
+  id          Int          @id @default(autoincrement())
+  name        String       @unique // IFFCO TOKIO, NSF, FFE, PRIF
+  enrollments Enrollment[]
+}
+
+model Enrollment {
+  id        Int      @id @default(autoincrement())
+  studentId Int
+  schemeId  Int
+  status    String   // "PENDING", "CONFIRMED", "CONFLICT"
+  student   Student  @relation(fields: [studentId], references: [id])
+  scheme    Scheme   @relation(fields: [schemeId], references: [id])
+
+  @@unique([studentId, schemeId])
+}

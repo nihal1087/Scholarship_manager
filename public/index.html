@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scholarship Portal | Admin</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+    <div class="app-container">
+        <main class="dashboard">
+            <header class="dashboard-header">
+                <div class="header-left">
+                    <h1>Scholarship Manager</h1>
+                    <p class="subtitle">Overview & Enrollment</p>
+                </div>
+
+                <div class="header-controls">
+                    <div class="select-wrapper">
+                        <select id="filterSelect" onchange="filterStudents()">
+                            <option value="All">All Students</option>
+                            <option value="IFFCO TOKIO">IFFCO TOKIO</option>
+                            <option value="NSF">NSF</option>
+                            <option value="FFE">FFE</option>
+                            <option value="PRIF">PRIF</option>
+                        </select>
+                        <i data-lucide="chevron-down" class="select-icon"></i>
+                    </div>
+                    <button class="btn" style="background: #ef4444; color: white;" onclick="clearData()">
+                        <i data-lucide="trash-2"></i> Reset DB
+                    </button>
+                    <button class="btn btn-primary" onclick="exportData()">
+                        <i data-lucide="download"></i>
+                        <span>Export Moodle CSV</span>
+                    </button>
+                </div>
+            </header>
+
+            <section class="stats-grid" aria-label="Key Statistics">
+                <article class="stat-card">
+                    <div class="stat-icon neutral"><i data-lucide="users"></i></div>
+                    <div class="stat-info">
+                        <h3>Processed</h3>
+                        <p id="stat-total">0</p>
+                    </div>
+                </article>
+
+                <article class="stat-card warning">
+                    <div class="stat-icon warning"><i data-lucide="alert-triangle"></i></div>
+                    <div class="stat-info">
+                        <h3>Conflicts</h3>
+                        <p id="stat-conflict">0</p>
+                    </div>
+                </article>
+
+                <article class="stat-card success">
+                    <div class="stat-icon success"><i data-lucide="check-circle"></i></div>
+                    <div class="stat-info">
+                        <h3>Enrolled</h3>
+                        <p id="stat-enrolled">0</p>
+                    </div>
+                </article>
+            </section>
+
+            <section class="table-wrapper">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Student Name</th>
+                            <th>Email Address</th>
+                            <th>Enrollment Status</th>
+                            <th>Eligible Schemes</th>
+                        </tr>
+                    </thead>
+                    <tbody id="student-table">
+                    </tbody>
+                </table>
+            </section>
+        </main>
+
+        <aside class="chat-interface">
+            <header class="chat-header">
+                <div class="avatar">
+                    <i data-lucide="bot"></i>
+                </div>
+                <div class="chat-meta">
+                    <h3>Eligibility Assistant</h3>
+                    <span class="status-indicator">Online</span>
+                </div>
+            </header>
+
+            <div class="chat-window" id="chat-window">
+                <div class="message bot">
+                    <p>Welcome back. Please upload a student CSV file to begin the validation process.</p>
+                </div>
+            </div>
+
+            <footer class="chat-input-area">
+                <input type="file" id="csv-upload" hidden>
+                <label for="csv-upload" class="upload-btn-full">
+                    <i data-lucide="upload-cloud"></i>
+                    <span>Upload CSV File</span>
+                </label>
+            </footer>
+        </aside>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>
