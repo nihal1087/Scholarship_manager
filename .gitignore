@@ -1,4 +1,8 @@
-node_modules/
-dev.db
-dev.db-journal
-uploads/
+/node_modules/
+/prisma/dev.db
+/prisma/dev.db-journal
+/uploads/
+.env
+.env.*
+*.log
+Moodle_Export_*.csv

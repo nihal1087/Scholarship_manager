@@ -4,11 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Scholarship Portal | Admin</title>
+    <title>Scholarship Manager</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
     <script src="https://unpkg.com/lucide@latest"></script>
@@ -19,13 +19,14 @@
         <main class="dashboard">
             <header class="dashboard-header">
                 <div class="header-left">
+                    <p class="eyebrow">Admin Workspace</p>
                     <h1>Scholarship Manager</h1>
-                    <p class="subtitle">Overview & Enrollment</p>
+                    <p class="subtitle">Eligibility review and Moodle enrollment exports</p>
                 </div>
 
                 <div class="header-controls">
                     <div class="select-wrapper">
-                        <select id="filterSelect" onchange="filterStudents()">
+                        <select id="filterSelect" aria-label="Filter by scholarship scheme">
                             <option value="All">All Students</option>
                             <option value="IFFCO TOKIO">IFFCO TOKIO</option>
                             <option value="NSF">NSF</option>
@@ -34,78 +35,79 @@
                         </select>
                         <i data-lucide="chevron-down" class="select-icon"></i>
                     </div>
-                    <button class="btn" style="background: #ef4444; color: white;" onclick="clearData()">
-                        <i data-lucide="trash-2"></i> Reset DB
+                    <button class="btn btn-danger" id="clearDataButton" type="button" title="Clear imported student data">
+                        <i data-lucide="trash-2"></i>
+                        <span>Clear Data</span>
                     </button>
-                    <button class="btn btn-primary" onclick="exportData()">
+                    <button class="btn btn-primary" id="exportButton" type="button" title="Download Moodle enrollment CSV">
                         <i data-lucide="download"></i>
-                        <span>Export Moodle CSV</span>
+                        <span>Export CSV</span>
                     </button>
                 </div>
             </header>
 
-            <section class="stats-grid" aria-label="Key Statistics">
+            <section class="stats-grid" aria-label="Enrollment summary">
                 <article class="stat-card">
                     <div class="stat-icon neutral"><i data-lucide="users"></i></div>
                     <div class="stat-info">
-                        <h3>Processed</h3>
+                        <h3>Students</h3>
                         <p id="stat-total">0</p>
                     </div>
                 </article>
 
-                <article class="stat-card warning">
-                    <div class="stat-icon warning"><i data-lucide="alert-triangle"></i></div>
+                <article class="stat-card">
+                    <div class="stat-icon warning"><i data-lucide="triangle-alert"></i></div>
                     <div class="stat-info">
                         <h3>Conflicts</h3>
                         <p id="stat-conflict">0</p>
                     </div>
                 </article>
 
-                <article class="stat-card success">
-                    <div class="stat-icon success"><i data-lucide="check-circle"></i></div>
+                <article class="stat-card">
+                    <div class="stat-icon success"><i data-lucide="circle-check"></i></div>
                     <div class="stat-info">
-                        <h3>Enrolled</h3>
+                        <h3>Confirmed</h3>
                         <p id="stat-enrolled">0</p>
                     </div>
                 </article>
             </section>
 
-            <section class="table-wrapper">
+            <section class="table-wrapper" aria-label="Imported students">
                 <table class="data-table">
+                    <caption class="sr-only">Imported students and their scholarship enrollment statuses</caption>
                     <thead>
                         <tr>
-                            <th>Student Name</th>
-                            <th>Email Address</th>
-                            <th>Enrollment Status</th>
+                            <th>Student</th>
+                            <th>Email</th>
+                            <th>Status</th>
                             <th>Eligible Schemes</th>
                         </tr>
                     </thead>
-                    <tbody id="student-table">
-                    </tbody>
+                    <tbody id="student-table"></tbody>
                 </table>
             </section>
         </main>
 
-        <aside class="chat-interface">
-            <header class="chat-header">
-                <div class="avatar">
-                    <i data-lucide="bot"></i>
+        <aside class="activity-panel">
+            <header class="activity-header">
+                <div class="activity-icon">
+                    <i data-lucide="clipboard-check"></i>
                 </div>
-                <div class="chat-meta">
-                    <h3>Eligibility Assistant</h3>
-                    <span class="status-indicator">Online</span>
+                <div class="activity-meta">
+                    <h2>Import Activity</h2>
+                    <span class="status-indicator">Ready</span>
                 </div>
             </header>
 
-            <div class="chat-window" id="chat-window">
-                <div class="message bot">
-                    <p>Welcome back. Please upload a student CSV file to begin the validation process.</p>
+            <div class="activity-window" id="chat-window" aria-live="polite">
+                <div class="message system">
+                    <p>Ready for the next CSV import.</p>
                 </div>
             </div>
 
-            <footer class="chat-input-area">
-                <input type="file" id="csv-upload" hidden>
-                <label for="csv-upload" class="upload-btn-full">
+            <footer class="upload-area">
+                <input type="file" id="csv-upload" accept=".csv,text/csv" hidden>
+                <label for="csv-upload" class="upload-btn-full" id="uploadLabel">
                     <i data-lucide="upload-cloud"></i>
                     <span>Upload CSV File</span>
                 </label>

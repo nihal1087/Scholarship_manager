@@ -1,155 +1,281 @@
 const fileInput = document.getElementById('csv-upload');
 const chatWindow = document.getElementById('chat-window');
 const tableBody = document.getElementById('student-table');
+const filterSelect = document.getElementById('filterSelect');
+const exportButton = document.getElementById('exportButton');
+const clearDataButton = document.getElementById('clearDataButton');
+const uploadLabel = document.getElementById('uploadLabel');
 
-// --- 1. UPLOAD HANDLER ---
-fileInput.addEventListener('change', async (e) => {
-    const file = e.target.files[0];
+const prioritySchemes = ['IFFCO TOKIO', 'NSF', 'FFE', 'PRIF'];
+
+uploadLabel.addEventListener('click', resetFilePicker);
+fileInput.addEventListener('change', handleUpload);
+filterSelect.addEventListener('change', filterStudents);
+exportButton.addEventListener('click', exportData);
+clearDataButton.addEventListener('click', clearData);
+
+function resetFilePicker() {
+    if (!fileInput.disabled) {
+        fileInput.value = '';
+    }
+}
+
+async function handleUpload(event) {
+    const file = event.target.files[0];
     if (!file) return;
 
-    addMessage("user", `Uploading ${file.name}...`);
-    
+    setImporting(true);
+    addMessage('user', `Importing ${file.name}`);
+
     const formData = new FormData();
     formData.append('file', file);
 
     try {
-        const res = await fetch('/upload', { method: 'POST', body: formData });
-        const data = await res.json();
-        
-        addMessage("bot", `✅ Processing Complete.<br>
-        - Processed: <b>${data.processed}</b><br>
-        - Missing Data: <b>${data.missing}</b><br>
-        - Conflicts Found: <b>${data.conflicts}</b>`);
+        const data = await requestJson('/upload', {
+            method: 'POST',
+            body: formData,
+        });
+
+        addSummaryMessage(data);
 
         if (data.conflicts > 0) {
             askBulkResolution(data.conflicts);
         } else {
-            addMessage("bot", "No conflicts found. All eligible students enrolled.");
+            addMessage('system', 'No enrollment conflicts were found.');
         }
-        
-        loadStats();
-    } catch (err) {
-        console.error(err);
-        addMessage("bot", "Error uploading file.");
-    }
-});
 
-// --- 2. CHAT UTILITIES ---
-function addMessage(sender, html) {
-    const div = document.createElement('div');
-    div.className = `message ${sender}`;
-    div.innerHTML = html;
-    chatWindow.appendChild(div);
+        await loadStats();
+    } catch (error) {
+        addMessage('system', error.message || 'The CSV import could not be completed.');
+    } finally {
+        setImporting(false);
+        fileInput.value = '';
+    }
+}
+
+async function requestJson(url, options = {}) {
+    const response = await fetch(url, options);
+    const payload = response.headers.get('content-type')?.includes('application/json')
+        ? await response.json()
+        : {};
+
+    if (!response.ok) {
+        throw new Error(payload.error || `Request failed with status ${response.status}.`);
+    }
+
+    return payload;
+}
+
+function setImporting(isImporting) {
+    fileInput.disabled = isImporting;
+    uploadLabel.classList.toggle('is-loading', isImporting);
+    uploadLabel.querySelector('span').textContent = isImporting ? 'Processing CSV' : 'Upload CSV File';
+}
+
+function addSummaryMessage(data) {
+    const details = [
+        ['Rows reviewed', data.processed],
+        ['Eligible records', data.imported],
+        ['Ineligible rows', data.ineligible],
+        ['Invalid rows', data.missing],
+        ['Conflicts', data.conflicts],
+    ];
+
+    addMessage('system', 'CSV import completed.', details);
+}
+
+function addMessage(sender, text, details = []) {
+    const message = document.createElement('div');
+    message.className = `message ${sender}`;
+
+    const body = document.createElement('p');
+    body.textContent = text;
+    message.appendChild(body);
+
+    if (details.length > 0) {
+        const list = document.createElement('dl');
+        list.className = 'message-details';
+
+        details.forEach(([label, value]) => {
+            const term = document.createElement('dt');
+            term.textContent = label;
+
+            const description = document.createElement('dd');
+            description.textContent = value ?? 0;
+
+            list.append(term, description);
+        });
+
+        message.appendChild(list);
+    }
+
+    chatWindow.appendChild(message);
     chatWindow.scrollTop = chatWindow.scrollHeight;
 }
 
-// --- 3. BULK RESOLUTION UI ---
 function askBulkResolution(count) {
-    addMessage("bot", `
-        <p>⚠️ <b>${count} students</b> are eligible for multiple schemes.</p>
-        <p>How do you want to handle these conflicts?</p>
-        
-        <div class="options">
-            <button class="option-btn" onclick="bulkResolve('KEEP_ALL')">
-                <b>Keep All</b> (Enroll in both)
-            </button>
-            <button class="option-btn" onclick="bulkResolve('PRIORITIZE', 'IFFCO TOKIO')">
-                Prioritize <b>IFFCO</b>
-            </button>
-            <button class="option-btn" onclick="bulkResolve('PRIORITIZE', 'NSF')">
-                Prioritize <b>NSF</b>
-            </button>
-        </div>
-    `);
+    addMessage('system', `${count} students are eligible for more than one scholarship.`);
+
+    const message = document.createElement('div');
+    message.className = 'message system';
+
+    const prompt = document.createElement('p');
+    prompt.textContent = 'Choose how to resolve the current conflicts.';
+    message.appendChild(prompt);
+
+    const options = document.createElement('div');
+    options.className = 'options';
+    options.appendChild(createResolveButton('Keep All', 'KEEP_ALL'));
+
+    prioritySchemes.forEach((scheme) => {
+        options.appendChild(createResolveButton(scheme, 'PRIORITIZE', scheme));
+    });
+
+    message.appendChild(options);
+    chatWindow.appendChild(message);
+    chatWindow.scrollTop = chatWindow.scrollHeight;
+    refreshIcons();
 }
 
-// --- 4. BULK RESOLVE ACTION ---
+function createResolveButton(label, action, schemeName = null) {
+    const button = document.createElement('button');
+    button.className = 'option-btn';
+    button.type = 'button';
+    button.textContent = label;
+    button.addEventListener('click', () => bulkResolve(action, schemeName));
+    return button;
+}
+
 async function bulkResolve(action, schemeName = null) {
-    let text = action === "KEEP_ALL" 
-        ? "✅ Keep All (Enroll in both)" 
-        : `✅ Prioritize ${schemeName}`;
-    
-    addMessage("user", text);
-    
-    const res = await fetch('/resolve-all', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ action, priorityScheme: schemeName })
-    });
-    
-    const data = await res.json();
-    addMessage("bot", data.message);
-    loadStats();
-}
+    const actionLabel = action === 'KEEP_ALL' ? 'Keep all eligible enrollments' : `Prioritize ${schemeName}`;
+    addMessage('user', actionLabel);
 
-// --- 5. FILTERING & STATS ---
-async function filterStudents() {
-    const scheme = document.getElementById('filterSelect').value;
-    const res = await fetch(`/scheme/${encodeURIComponent(scheme)}`);
-    const data = await res.json();
-    renderTable(data);
-}
-
-async function loadStats() {
-    const res = await fetch('/stats');
-    const students = await res.json();
-    
-    let conflicts = 0;
-    let enrolled = 0;
-    students.forEach(s => {
-        if(s.enrollments.some(e => e.status === "CONFLICT")) conflicts++;
-        else enrolled++;
-    });
-
-    document.getElementById('stat-total').innerText = students.length;
-    document.getElementById('stat-conflict').innerText = conflicts;
-    document.getElementById('stat-enrolled').innerText = enrolled;
-
-    renderTable(students);
-}
-
-function renderTable(students) {
-    if(!students) return;
-    
-    tableBody.innerHTML = students.map(s => {
-        const schemes = s.enrollments.map(e => e.scheme.name).join(", ");
-        const status = s.enrollments.some(e => e.status === "CONFLICT") ? "⚠️ Conflict" : "✅ Enrolled";
-        
-        const statusStyle = status.includes('Conflict') 
-            ? 'background:#fff7ed; color:#ea580c; padding:4px 8px; border-radius:4px; font-weight:600;' 
-            : 'background:#f0fdf4; color:#16a34a; padding:4px 8px; border-radius:4px; font-weight:600;';
-
-        return `
-            <tr>
-                <td>
-                    <div style="font-weight:600">${s.firstName} ${s.lastName || ''}</div>
-                </td>
-                <td>${s.email}</td>
-                <td><span style="${statusStyle}">${status}</span></td>
-                <td style="color:#64748b">${schemes}</td>
-            </tr>
-        `;
-    }).join('');
-}
-
-// --- 6. EXPORT DATA (Updated) ---
-function exportData() {
-    const scheme = document.getElementById('filterSelect').value;
-    window.location.href = `/export?scheme=${encodeURIComponent(scheme)}`;
-}
-
-// --- 7. RESET FUNCTION ---
-async function clearData() {
-    if(!confirm("Are you sure you want to delete ALL data? This cannot be undone.")) return;
-    
     try {
-        await fetch('/clear-data', { method: 'DELETE' });
-        loadStats(); 
-        addMessage("bot", "Database has been reset.");
-    } catch (e) {
-        alert("Failed to reset database");
+        const data = await requestJson('/resolve-all', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ action, priorityScheme: schemeName }),
+        });
+
+        addMessage('system', data.message);
+        await loadStats();
+    } catch (error) {
+        addMessage('system', error.message || 'Conflicts could not be resolved.');
     }
 }
 
-// Initial Load
+async function filterStudents() {
+    const scheme = filterSelect.value;
+
+    try {
+        const data = await requestJson(`/scheme/${encodeURIComponent(scheme)}`);
+        renderTable(data);
+    } catch (error) {
+        addMessage('system', error.message || 'Student records could not be loaded.');
+    }
+}
+
+async function loadStats() {
+    try {
+        const students = await requestJson('/stats');
+
+        const conflicts = students.filter((student) =>
+            student.enrollments.some((enrollment) => enrollment.status === 'CONFLICT')
+        ).length;
+
+        const confirmed = students.filter((student) =>
+            student.enrollments.some((enrollment) => enrollment.status === 'CONFIRMED')
+        ).length;
+
+        document.getElementById('stat-total').textContent = students.length;
+        document.getElementById('stat-conflict').textContent = conflicts;
+        document.getElementById('stat-enrolled').textContent = confirmed;
+
+        renderTable(students);
+    } catch (error) {
+        addMessage('system', error.message || 'Summary data could not be loaded.');
+    }
+}
+
+function renderTable(students = []) {
+    tableBody.replaceChildren();
+
+    if (students.length === 0) {
+        const row = document.createElement('tr');
+        row.className = 'empty-row';
+
+        const cell = document.createElement('td');
+        cell.colSpan = 4;
+        cell.textContent = 'No student records found for this view.';
+
+        row.appendChild(cell);
+        tableBody.appendChild(row);
+        return;
+    }
+
+    students.forEach((student) => {
+        const row = document.createElement('tr');
+        const hasConflict = student.enrollments.some((enrollment) => enrollment.status === 'CONFLICT');
+        const hasConfirmed = student.enrollments.some((enrollment) => enrollment.status === 'CONFIRMED');
+        const status = hasConflict ? 'Conflict' : hasConfirmed ? 'Confirmed' : 'Not enrolled';
+        const schemes = student.enrollments.map((enrollment) => enrollment.scheme.name).join(', ') || 'None';
+
+        row.appendChild(createStudentCell(student));
+        row.appendChild(createTextCell(student.email || 'No email'));
+        row.appendChild(createStatusCell(status));
+        row.appendChild(createTextCell(schemes, 'scheme-list'));
+
+        tableBody.appendChild(row);
+    });
+}
+
+function createStudentCell(student) {
+    const cell = document.createElement('td');
+    const name = document.createElement('span');
+    name.className = 'student-name';
+    name.textContent = [student.firstName, student.lastName].filter(Boolean).join(' ') || 'Unnamed student';
+    cell.appendChild(name);
+    return cell;
+}
+
+function createTextCell(text, className) {
+    const cell = document.createElement('td');
+    cell.textContent = text;
+    if (className) cell.className = className;
+    return cell;
+}
+
+function createStatusCell(status) {
+    const cell = document.createElement('td');
+    const pill = document.createElement('span');
+    pill.className = `status-pill status-${status.toLowerCase().replace(/\s+/g, '-')}`;
+    pill.textContent = status;
+    cell.appendChild(pill);
+    return cell;
+}
+
+function exportData() {
+    const scheme = filterSelect.value;
+    window.location.href = `/export?scheme=${encodeURIComponent(scheme)}`;
+}
+
+async function clearData() {
+    const confirmed = window.confirm('Clear all imported students and enrollments? This action cannot be undone.');
+    if (!confirmed) return;
+
+    try {
+        const data = await requestJson('/clear-data', { method: 'DELETE' });
+        addMessage('system', data.message);
+        await loadStats();
+    } catch (error) {
+        addMessage('system', error.message || 'Data could not be cleared.');
+    }
+}
+
+function refreshIcons() {
+    if (window.lucide) {
+        window.lucide.createIcons();
+    }
+}
+
 loadStats();
