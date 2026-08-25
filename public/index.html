@@ -8,7 +8,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
     <script src="https://unpkg.com/lucide@latest"></script>
@@ -19,55 +19,93 @@
         <main class="dashboard">
             <header class="dashboard-header">
                 <div class="header-left">
-                    <p class="eyebrow">Admin Workspace</p>
                     <h1>Scholarship Manager</h1>
-                    <p class="subtitle">Eligibility review and Moodle enrollment exports</p>
+                    <p class="subtitle">Automated eligibility evaluation & LMS exports</p>
                 </div>
 
                 <div class="header-controls">
-                    <div class="select-wrapper">
-                        <select id="filterSelect" aria-label="Filter by scholarship scheme">
-                            <option value="All">All Students</option>
+                    <div class="custom-dropdown" id="schemeDropdown">
+                        <button class="custom-dropdown-trigger" type="button" aria-haspopup="listbox" aria-expanded="false" id="dropdownTrigger">
+                            <span class="dropdown-selected-label">All Schemes</span>
+                            <i data-lucide="chevron-down" class="dropdown-chevron"></i>
+                        </button>
+                        <div class="custom-dropdown-menu" role="listbox" id="dropdownMenu">
+                            <div class="custom-dropdown-option is-selected" role="option" data-value="All" aria-selected="true">
+                                <span>All Schemes</span>
+                                <i data-lucide="check" class="check-icon"></i>
+                            </div>
+                            <div class="custom-dropdown-option" role="option" data-value="IFFCO TOKIO" aria-selected="false">
+                                <span>IFFCO TOKIO</span>
+                                <i data-lucide="check" class="check-icon"></i>
+                            </div>
+                            <div class="custom-dropdown-option" role="option" data-value="NSF" aria-selected="false">
+                                <span>NSF</span>
+                                <i data-lucide="check" class="check-icon"></i>
+                            </div>
+                            <div class="custom-dropdown-option" role="option" data-value="FFE" aria-selected="false">
+                                <span>FFE</span>
+                                <i data-lucide="check" class="check-icon"></i>
+                            </div>
+                            <div class="custom-dropdown-option" role="option" data-value="PRIF" aria-selected="false">
+                                <span>PRIF</span>
+                                <i data-lucide="check" class="check-icon"></i>
+                            </div>
+                        </div>
+                        <select id="filterSelect" hidden aria-hidden="true">
+                            <option value="All" selected>All Schemes</option>
                             <option value="IFFCO TOKIO">IFFCO TOKIO</option>
                             <option value="NSF">NSF</option>
                             <option value="FFE">FFE</option>
                             <option value="PRIF">PRIF</option>
                         </select>
-                        <i data-lucide="chevron-down" class="select-icon"></i>
                     </div>
-                    <button class="btn btn-danger" id="clearDataButton" type="button" title="Clear imported student data">
-                        <i data-lucide="trash-2"></i>
-                        <span>Clear Data</span>
-                    </button>
-                    <button class="btn btn-primary" id="exportButton" type="button" title="Download Moodle enrollment CSV">
-                        <i data-lucide="download"></i>
-                        <span>Export CSV</span>
-                    </button>
+                    <div class="header-btn-group">
+                        <button class="btn btn-secondary-pill" id="clearDataButton" type="button" title="Clear all imported data">
+                            <i data-lucide="trash-2"></i>
+                            <span>Clear Data</span>
+                        </button>
+                        <button class="btn btn-primary-cta" id="exportButton" type="button" title="Download Moodle enrollment CSV">
+                            <i data-lucide="download"></i>
+                            <span>Export CSV</span>
+                        </button>
+                    </div>
                 </div>
             </header>
 
             <section class="stats-grid" aria-label="Enrollment summary">
                 <article class="stat-card">
-                    <div class="stat-icon neutral"><i data-lucide="users"></i></div>
-                    <div class="stat-info">
-                        <h3>Students</h3>
-                        <p id="stat-total">0</p>
+                    <div class="stat-card-header">
+                        <span class="stat-label">Students</span>
+                        <div class="stat-icon icon-primary">
+                            <i data-lucide="users"></i>
+                        </div>
+                    </div>
+                    <div class="stat-card-body">
+                        <p class="stat-number" id="stat-total">0</p>
                     </div>
                 </article>
 
                 <article class="stat-card">
-                    <div class="stat-icon warning"><i data-lucide="triangle-alert"></i></div>
-                    <div class="stat-info">
-                        <h3>Conflicts</h3>
-                        <p id="stat-conflict">0</p>
+                    <div class="stat-card-header">
+                        <span class="stat-label">Conflicts</span>
+                        <div class="stat-icon icon-warning">
+                            <i data-lucide="alert-triangle"></i>
+                        </div>
+                    </div>
+                    <div class="stat-card-body">
+                        <p class="stat-number" id="stat-conflict">0</p>
                     </div>
                 </article>
 
                 <article class="stat-card">
-                    <div class="stat-icon success"><i data-lucide="circle-check"></i></div>
-                    <div class="stat-info">
-                        <h3>Confirmed</h3>
-                        <p id="stat-enrolled">0</p>
+                    <div class="stat-card-header">
+                        <span class="stat-label">Confirmed</span>
+                        <div class="stat-icon icon-success">
+                            <i data-lucide="check-circle-2"></i>
+                        </div>
+                    </div>
+                    <div class="stat-card-body">
+                        <p class="stat-number" id="stat-enrolled">0</p>
                     </div>
                 </article>
             </section>
@@ -91,17 +129,20 @@
         <aside class="activity-panel">
             <header class="activity-header">
                 <div class="activity-icon">
-                    <i data-lucide="clipboard-check"></i>
+                    <i data-lucide="sparkles"></i>
                 </div>
                 <div class="activity-meta">
                     <h2>Import Activity</h2>
-                    <span class="status-indicator">Ready</span>
+                    <div class="status-indicator">
+                        <span class="status-dot-sm"></span>
+                        <span>System Ready</span>
+                    </div>
                 </div>
             </header>
 
             <div class="activity-window" id="chat-window" aria-live="polite">
                 <div class="message system">
-                    <p>Ready for the next CSV import.</p>
+                    <p>Ready for applicant CSV import. Upload a file below to evaluate eligibility rules.</p>
                 </div>
             </div>
 
@@ -109,7 +150,7 @@
                 <input type="file" id="csv-upload" accept=".csv,text/csv" hidden>
                 <label for="csv-upload" class="upload-btn-full" id="uploadLabel">
                     <i data-lucide="upload-cloud"></i>
-                    <span>Upload CSV File</span>
+                    <span>Upload Applicant CSV</span>
                 </label>
             </footer>
         </aside>

@@ -218,12 +218,11 @@ function renderTable(students = []) {
         const hasConflict = student.enrollments.some((enrollment) => enrollment.status === 'CONFLICT');
         const hasConfirmed = student.enrollments.some((enrollment) => enrollment.status === 'CONFIRMED');
         const status = hasConflict ? 'Conflict' : hasConfirmed ? 'Confirmed' : 'Not enrolled';
-        const schemes = student.enrollments.map((enrollment) => enrollment.scheme.name).join(', ') || 'None';
 
         row.appendChild(createStudentCell(student));
-        row.appendChild(createTextCell(student.email || 'No email'));
+        row.appendChild(createEmailCell(student.email));
         row.appendChild(createStatusCell(status));
-        row.appendChild(createTextCell(schemes, 'scheme-list'));
+        row.appendChild(createSchemesCell(student.enrollments));
 
         tableBody.appendChild(row);
     });
@@ -231,26 +230,77 @@ function renderTable(students = []) {
 
 function createStudentCell(student) {
     const cell = document.createElement('td');
+    cell.className = 'col-student';
+
     const name = document.createElement('span');
     name.className = 'student-name';
-    name.textContent = [student.firstName, student.lastName].filter(Boolean).join(' ') || 'Unnamed student';
+    const fullName = [student.firstName, student.lastName].filter(Boolean).join(' ') || 'Unnamed student';
+    name.textContent = fullName;
+    name.title = fullName;
+
     cell.appendChild(name);
     return cell;
 }
 
-function createTextCell(text, className) {
+function createEmailCell(email) {
     const cell = document.createElement('td');
-    cell.textContent = text;
-    if (className) cell.className = className;
+    cell.className = 'col-email';
+
+    const text = document.createElement('span');
+    text.className = 'student-email';
+    const emailValue = email || 'No email';
+    text.textContent = emailValue;
+    text.title = emailValue;
+
+    cell.appendChild(text);
     return cell;
 }
 
 function createStatusCell(status) {
     const cell = document.createElement('td');
-    const pill = document.createElement('span');
-    pill.className = `status-pill status-${status.toLowerCase().replace(/\s+/g, '-')}`;
-    pill.textContent = status;
-    cell.appendChild(pill);
+    cell.className = 'col-status';
+
+    const badge = document.createElement('span');
+    badge.className = `status-badge status-${status.toLowerCase().replace(/\s+/g, '-')}`;
+
+    const dot = document.createElement('span');
+    dot.className = 'status-dot-indicator';
+
+    const label = document.createElement('span');
+    label.className = 'status-label';
+    label.textContent = status;
+
+    badge.append(dot, label);
+    cell.appendChild(badge);
+    return cell;
+}
+
+function createSchemesCell(enrollments = []) {
+    const cell = document.createElement('td');
+    cell.className = 'col-schemes';
+
+    if (!enrollments || enrollments.length === 0) {
+        const empty = document.createElement('span');
+        empty.className = 'scheme-empty';
+        empty.textContent = '—';
+        cell.appendChild(empty);
+        return cell;
+    }
+
+    const group = document.createElement('div');
+    const isMultiRow = enrollments.length > 3;
+    group.className = `scheme-chip-group ${isMultiRow ? 'chips-grid-2x2' : ''}`;
+
+    enrollments.forEach((enrollment) => {
+        const name = enrollment.scheme?.name || enrollment.name || 'Unknown';
+        const chip = document.createElement('span');
+        const schemeSlug = name.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+        chip.className = `scheme-chip scheme-tag-${schemeSlug}`;
+        chip.textContent = name;
+        group.appendChild(chip);
+    });
+
+    cell.appendChild(group);
     return cell;
 }
 
@@ -278,4 +328,66 @@ function refreshIcons() {
     }
 }
 
+function initCustomDropdown() {
+    const dropdown = document.getElementById('schemeDropdown');
+    if (!dropdown) return;
+
+    const trigger = document.getElementById('dropdownTrigger');
+    const menu = document.getElementById('dropdownMenu');
+    const label = trigger?.querySelector('.dropdown-selected-label');
+    const options = menu?.querySelectorAll('.custom-dropdown-option');
+
+    if (!trigger || !menu || !label || !options) return;
+
+    const toggleDropdown = (show) => {
+        const willOpen = show !== undefined ? show : !menu.classList.contains('is-open');
+        menu.classList.toggle('is-open', willOpen);
+        trigger.setAttribute('aria-expanded', String(willOpen));
+        trigger.classList.toggle('is-active', willOpen);
+    };
+
+    trigger.addEventListener('click', (e) => {
+        e.stopPropagation();
+        toggleDropdown();
+    });
+
+    options.forEach((opt) => {
+        opt.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const value = opt.getAttribute('data-value') || 'All';
+            const text = opt.querySelector('span')?.textContent || 'All Schemes';
+
+            label.textContent = text;
+            options.forEach((o) => {
+                o.classList.remove('is-selected');
+                o.setAttribute('aria-selected', 'false');
+            });
+            opt.classList.add('is-selected');
+            opt.setAttribute('aria-selected', 'true');
+
+            if (filterSelect) {
+                filterSelect.value = value;
+                filterSelect.dispatchEvent(new Event('change'));
+            }
+
+            toggleDropdown(false);
+        });
+    });
+
+    document.addEventListener('click', (e) => {
+        if (!dropdown.contains(e.target)) {
+            toggleDropdown(false);
+        }
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && menu.classList.contains('is-open')) {
+            toggleDropdown(false);
+            trigger.focus();
+        }
+    });
+}
+
+initCustomDropdown();
 loadStats();
+
