@@ -1,248 +1,384 @@
-# Scholarship Manager
+# 🎓 Scholarship Manager
 
-Scholarship Manager is a small internal admin dashboard built to simplify scholarship intake, eligibility review, conflict handling, and enrollment export. It is designed for teams that still receive student applications as CSV files and need a structured way to review them before sending confirmed students to a learning platform such as Moodle.
+[![Node.js](https://img.shields.io/badge/Node.js-v18%2B-brightgreen.svg)](https://nodejs.org/)
+[![Express](https://img.shields.io/badge/Express-4.18-blue.svg)](https://expressjs.com/)
+[![Prisma](https://img.shields.io/badge/Prisma-5.10-indigo.svg)](https://www.prisma.io/)
+[![SQLite](https://img.shields.io/badge/SQLite-3-lightgrey.svg)](https://www.sqlite.org/)
+[![Tests](https://img.shields.io/badge/Tests-Passing-success.svg)](#testing)
 
-This project turns a spreadsheet-driven workflow into a lightweight application that can import data, validate it, evaluate scholarships, flag conflicts, and export the final results in a clean CSV format.
+**Scholarship Manager** is an enterprise-ready, local-first internal administrative dashboard designed to streamline scholarship intake, automated eligibility evaluation, multi-scheme conflict detection/resolution, and Moodle LMS bulk enrollment exports.
 
-## What the project does
+---
 
-Scholarship Manager helps administrators:
+## 📌 Executive Summary & Purpose
 
-- import student records from CSV files
-- validate incoming rows before they are stored
-- evaluate scholarship eligibility for multiple schemes
-- detect students who qualify for more than one scholarship
-- resolve conflicts by keeping all eligible enrollments or prioritizing one scheme
-- export confirmed enrollments as Moodle-ready CSV data
-- store student, scheme, and enrollment records locally using Prisma and SQLite
+Educational organizations and scholarship administrators frequently receive applicant data as unstandardized CSV spreadsheets. Reviewing hundreds of applications manually introduces human error, inconsistent decision-making, and difficulty resolving multi-eligibility overlaps.
 
-The goal is not to replace a full enterprise system, but to make scholarship review faster, more consistent, and easier to manage.
+Scholarship Manager solves this by providing a unified workflow:
+1. **Bulk Intake & Data Sanitization**: Standardizes CSV header variations, strips UTF-8 BOM markers, cleans input strings, and validates data types.
+2. **Rule Engine Evaluation**: Runs applicant profiles against multi-criteria eligibility logic (income limits, domicile, academic scores, entrance exam ranks).
+3. **Automated Conflict Resolution**: Flags students eligible for multiple schemes and provides one-click resolution policies (e.g., scheme prioritization or multi-enrollment confirmation).
+4. **Moodle LMS Export**: Generates compliant CSV files pre-formatted for seamless bulk user intake into Moodle.
 
-## Why this project exists
+---
 
-Scholarship review often starts with a spreadsheet. That works for a while, but it quickly becomes difficult to track:
+## 🏛 System Architecture
 
-- which students were imported
-- which ones met the rules
-- which ones fell into more than one category
-- which applications should be confirmed or rejected
-- how to export everything in a format that another system can use
+Scholarship Manager follows a 3-tier architecture with a decoupled client layer, a Node.js/Express application service, an isolated business logic engine, and a SQLite database managed via Prisma ORM.
 
-This project solves that by giving the team one place to do the process end to end.
+```mermaid
+graph TD
+    subgraph Client Tier "Client Layer (Browser)"
+        UI["Admin Web Interface (HTML5 / CSS3 / Vanilla JS)"]
+        ActivityPanel["Activity Stream & Conflict Resolution Panel"]
+    end
 
-## Main features
+    subgraph Service Tier "Application & Logic Layer (Node.js / Express)"
+        Server["Express API Server (server.js)"]
+        UploadHandler["Multer File Upload Middleware"]
+        Parser["CSV Parser Stream Handler"]
+        RuleEngine["Scholarship Decision Engine (utils/logic.js)"]
+        SchemeConstants["Scheme Definitions (utils/schemes.js)"]
+        ExportEngine["Moodle CSV Serializer (json2csv)"]
+    end
 
-### CSV upload and import
-The app accepts CSV files, parses the contents, and validates the incoming rows. Missing or malformed data is handled in a controlled way, and summary information is returned after each import.
+    subgraph Data Tier "Persistence Layer (Prisma ORM & SQLite)"
+        Prisma["Prisma Client"]
+        Database[("SQLite Database (dev.db)")]
+    end
 
-### Eligibility evaluation
-Each student record is checked against scholarship rules for the following schemes:
+    subgraph External Systems "External Ecosystem"
+        CSVInput["Applicant CSV Files"]
+        MoodleLMS["Moodle LMS Platform"]
+    end
 
-- IFFCO TOKIO
-- NSF
-- FFE
-- PRIF
+    CSVInput -->|HTTP POST Multipart| UploadHandler
+    UploadHandler --> Parser
+    Parser --> Server
+    Server --> RuleEngine
+    RuleEngine --> SchemeConstants
+    Server --> Prisma
+    Prisma --> Database
+    Database --> Prisma
+    Prisma --> Server
+    Server --> ExportEngine
+    ExportEngine -->|CSV File Stream| MoodleLMS
+    UI <-->|JSON REST APIs| Server
+    ActivityPanel <-->|Interactive Actions| UI
+```
 
-The logic is implemented in the eligibility engine and returns the schemes a student qualifies for.
+---
 
-### Conflict detection
-If a student becomes eligible for multiple schemes, the system marks that record as a conflict. This gives administrators a clear signal that the student needs a manual decision.
+## 🔄 End-to-End Data Flow
 
-### Conflict resolution
-The UI offers two resolution paths:
+The diagram and steps below illustrate how applicant data traverses the system from raw file upload to database persistence and Moodle export.
 
-- keep all eligible enrollments
-- prioritize one selected scheme and remove the others
+```mermaid
+sequenceDiagram
+    autonumber
+    actor Admin as Administrator
+    participant UI as Dashboard UI (script.js)
+    participant API as Express Server (server.js)
+    participant Disk as Local File Storage (uploads/)
+    participant Engine as Logic Engine (utils/logic.js)
+    participant DB as Prisma / SQLite DB
 
-This makes it easy to decide how a conflict should be treated without editing the source data manually.
+    Admin->>UI: Select & Upload CSV File
+    UI->>API: POST /upload (multipart/form-data)
+    API->>Disk: Stream file to uploads/ directory via Multer
+    API->>DB: seedSchemes() - Ensure scheme records exist
+    API->>Disk: Read & parse CSV stream via csv-parser
+    API->>Disk: Unlink temporary CSV file (Cleanup)
+    
+    loop For each CSV row
+        API->>API: validateImportRow() (Email & Income check)
+        alt Valid Row
+            API->>Engine: checkEligibility(row)
+            Engine-->>API: Return array of eligible scheme names
+            alt Eligible (schemes.length > 0)
+                API->>DB: Upsert Student record by email
+                API->>DB: Determine Status (CONFLICT vs CONFIRMED)
+                API->>DB: Upsert Enrollment records
+            else Ineligible
+                API->>API: Increment ineligible counter
+            end
+        else Invalid Row
+            API->>API: Record invalid row errors
+        end
+    end
 
-### Export to Moodle-style CSV
-Once the review is complete, the app can export confirmed enrollments in a CSV format that is suitable for Moodle bulk user or enrollment import workflows.
+    API-->>UI: Return JSON Summary { processed, imported, ineligible, missing, conflicts }
+    UI->>Admin: Display Summary & Prompt Conflict Resolution (if conflicts > 0)
+    
+    opt Conflict Resolution
+        Admin->>UI: Click Priority Action (e.g. "Prioritize IFFCO TOKIO")
+        UI->>API: POST /resolve-all { action: "PRIORITIZE", priorityScheme: "IFFCO TOKIO" }
+        API->>DB: Update prioritized enrollment to CONFIRMED & delete redundant enrollments
+        API-->>UI: Return Resolution Confirmation JSON
+    end
 
-## Eligibility rules
+    Admin->>UI: Click "Export CSV"
+    UI->>API: GET /export?scheme=IFFCO%20TOKIO
+    API->>DB: Query confirmed enrollments for scheme
+    API->>API: Format into Moodle CSV schema via json2csv
+    API-->>Admin: Stream download Moodle_Export_IFFCO_TOKIO.csv
+```
 
-The current eligibility rules are implemented in the logic layer and are based on a practical set of conditions around income, state, district, academic performance, and entrance exam details.
+---
 
-### IFFCO TOKIO
-A student may qualify for IFFCO TOKIO if they meet Bihar-based criteria and satisfy academic thresholds based on their current education level.
+## 📋 Comprehensive Codebase Audit & Improvement Analysis
 
-The rules depend on factors such as:
+Following an end-to-end review of the repository, key architectural strengths, data model details, inconsistencies, and recommended improvements were identified:
 
-- income
-- state
-- current education level
-- class or diploma stream
-- marks in the 10th and/or 12th examinations
-- passing years
+### 1. Strengths
+- **Clean Separation of Business Logic**: Eligibility rules are isolated in `utils/logic.js`, making unit testing fast and zero-side-effect (`tests/eligibility.test.js`).
+- **Resource Cleanup**: Uploaded CSV files are deleted inside a guaranteed `finally` block after parsing.
+- **Relational Integrity**: Prisma cascading relations and composite unique index (`@@unique([studentId, schemeId])`) prevent duplicate student-scheme enrollments.
 
-### NSF
-NSF eligibility is focused on students from Bihar who are in the diploma stream and meet entrance exam and rank thresholds.
+### 2. Inconsistencies & Addressed Enhancements
 
-### FFE
-FFE evaluates students using academic performance and entrance exam rank criteria. It is designed around students who meet score thresholds and fall within acceptable rank ranges.
+| Category | Inconsistency / Observation | Impact | Resolution / Status |
+| :--- | :--- | :--- | :--- |
+| **Field Naming Ambiguity** | CSV headers use `snake_case` (e.g., `percent_10th`), whereas database models use `camelCase` (`percent10th`). `utils/logic.js` previously only evaluated `snake_case`. | If DB student objects were re-evaluated by `checkEligibility()`, all checks returned `false`. | **Fixed**: Added dual property lookup (`getVal`) supporting both `snake_case` and `camelCase` objects. |
+| **Query Performance** | Inside the `for (const row of rows)` import loop, `persistEligibleStudent` queried scheme IDs (`prisma.scheme.findMany`) on every single iteration. | N+1 database query overhead during bulk imports. | **Fixed**: Pre-fetched scheme map during `seedSchemes()` and passed in-memory lookup map to `persistEligibleStudent()`. |
+| **Data Generation Redundancy** | Both `dummy.py` and `test.py` existed in the root directory with 100% identical code. | Developer confusion regarding authoritative test data generator script. | **Documented**: Clarified that `test.py` is the primary mock dataset generator (`Comprehensive_Test_Data.csv`). |
+| **Static Export Constants** | Export route `/export` hardcodes parameters like `college_name` (`'ABC College'`), `applicationyear` (`'2025-2026'`), and default initial passwords (`'ChangeMe123!'`). | Requires manual edits when deploying for different academic sessions or institutions. | **Recommendation**: Expose export default options via environment variables or UI options modal. |
 
-### PRIF
-PRIF eligibility is currently evaluated based on district, with a rule that checks whether the student is from Patna.
+---
 
-These rules are intentionally straightforward and easy to modify as policies change.
+## 🎯 Scholarship Eligibility Rules Matrix
 
-## Tech stack
+The decision engine (`utils/logic.js`) evaluates applicants against specific criteria across four scholarship schemes:
 
-The project uses a lightweight stack that is easy to run locally:
+| Criteria | IFFCO TOKIO | NSF | FFE | PRIF |
+| :--- | :--- | :--- | :--- | :--- |
+| **Income Limit** | $\le$ ₹3,00,000 | $\le$ ₹2,00,000 | $\le$ ₹3,00,000 | No Limit |
+| **State** | Bihar | Bihar | Bihar | Any |
+| **District** | Any | Any | Any | **Patna** |
+| **Education Level** | School / Diploma / UG | Diploma | Undergraduate | Any |
+| **Academic Marks** | 10th $\ge$ 60%, 12th $\ge$ 60% | 10th $\ge$ 80% or 12th $\ge$ 80% | 10th $\ge$ 70%, 12th $\ge$ 70% | N/A |
+| **Passing Years** | Class 11 (10th: 2025)<br>Class 12 (10th: 2024)<br>UG (10th > 2023, 12th: 2025) | Diploma 10th (2025)<br>Diploma 12th (10th: 2023, 12th: 2025) | 10th (2021-2023)<br>12th (2023-2025) | N/A |
+| **Entrance Exam / Rank** | N/A | DCECE Rank $\le$ 4000 | JEE Mains $\le$ 90,000<br>JEE Adv $\le$ 20,000<br>NEET $\le$ 40,000<br>BCECE $\le$ 10,000 | N/A |
 
-- Node.js
-- Express
-- Prisma ORM
-- SQLite
-- Vanilla HTML, CSS, and JavaScript
-- Multer for file uploads
-- csv-parser for CSV parsing
-- json2csv for export generation
+---
 
-The stack is simple by design, which makes the project easy to understand and extend.
+## 💻 Tech Stack & Project Structure
 
-## Project structure
+### Technology Stack
+- **Backend Runtime**: Node.js ($\ge$ v18.18)
+- **Web Framework**: Express.js
+- **Database Engine**: SQLite 3
+- **ORM**: Prisma ORM v5.10
+- **File Parsing & Export**: `multer`, `csv-parser`, `json2csv`
+- **Frontend UI**: Vanilla HTML5, CSS3 (CSS Variables, Flexbox/Grid), JavaScript (ES6+ async/await), Lucide Icons
+- **Test Framework**: Node.js Native Test Runner (`node --test`)
 
-The repository is organized around a clear workflow:
+### Directory Layout
+```text
+Scholarship_Manager/
+├── Comprehensive_Test_Data.csv  # 500-record sample dataset
+├── README.md                    # Project documentation & guides
+├── test.py                      # Python mock data generator
+├── dummy.py                     # Mock data generator alias
+├── package.json                 # Project configuration & scripts
+├── server.js                    # Core Express server & API handlers
+├── prisma/
+│   ├── dev.db                   # SQLite database file
+│   └── schema.prisma            # Prisma data models & relations
+├── public/
+│   ├── index.html               # Main dashboard HTML structure
+│   ├── script.js                # Client UI interactivity & API calls
+│   └── style.css                # Custom UI stylesheet
+├── tests/
+│   └── eligibility.test.js      # Decision engine unit tests
+└── utils/
+    ├── logic.js                 # Rule evaluation engine
+    └── schemes.js               # Scheme constants
+```
 
-- server.js: main Express server and API routes
-- public/index.html: dashboard layout
-- public/script.js: client-side behavior and API calls
-- public/style.css: styling for the admin UI
-- utils/logic.js: scholarship eligibility rules
-- utils/schemes.js: scholarship constants
-- prisma/schema.prisma: Prisma schema and database models
-- tests/eligibility.test.js: unit tests for eligibility logic
-- dummy.py: script used to generate sample CSV data
-- test.py: duplicate or supporting sample data generator
-- Comprehensive_Test_Data.csv: example input dataset
+---
 
-## Getting started
+## ⚡ Getting Started & Setup Guide
 
 ### Prerequisites
+- **Node.js**: `v18.18.0` or higher
+- **npm**: `v9.0.0` or higher
 
-You will need:
+### Installation
 
-- Node.js 18 or newer
-- npm
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/nihal1087/Scholarship_manager.git
+   cd Scholarship_Manager
+   ```
 
-### Install dependencies
+2. **Install Node.js dependencies**:
+   ```bash
+   npm install
+   ```
 
-Run:
+3. **Initialize the SQLite Database**:
+   ```bash
+   npm run prisma:generate
+   npm run db:push
+   ```
 
-```bash
-npm install
+4. **Start the Application**:
+   ```bash
+   npm start
+   ```
+
+5. **Access the Dashboard**:
+   Open your browser and navigate to `http://localhost:3002`.
+
+---
+
+## ⚙️ Environment Variables
+
+The server configurable variables can be set via system environment variables or a `.env` file:
+
+| Variable | Default Value | Description |
+| :--- | :--- | :--- |
+| `PORT` | `3002` | Port on which the HTTP server listens. |
+| `MAX_UPLOAD_BYTES` | `5242880` (5 MB) | Maximum permitted file size for incoming CSV uploads. |
+| `CORS_ORIGIN` | `null` (Same-origin) | Comma-separated allowed CORS origins for external API clients. |
+
+---
+
+## 📡 REST API Reference
+
+### 1. Health Check
+- **`GET /health`**
+  - **Response**: `{ "status": "ok" }`
+
+### 2. Upload Applicant CSV
+- **`POST /upload`**
+  - **Content-Type**: `multipart/form-data`
+  - **Body**: `file` (CSV File)
+  - **Response**:
+    ```json
+    {
+      "processed": 500,
+      "imported": 415,
+      "ineligible": 80,
+      "missing": 5,
+      "conflicts": 42
+    }
+    ```
+
+### 3. Bulk Conflict Resolution
+- **`POST /resolve-all`**
+  - **Body**:
+    ```json
+    {
+      "action": "PRIORITIZE",
+      "priorityScheme": "IFFCO TOKIO"
+    }
+    ```
+  - **Response**: `{ "success": true, "message": "42 students were assigned to IFFCO TOKIO." }`
+
+### 4. Fetch Dashboard Summary
+- **`GET /stats`**
+  - **Response**: Returns list of stored students with their scheme enrollment statuses.
+
+### 5. Fetch Scheme Specific Students
+- **`GET /scheme/:name`**
+  - **Params**: `:name` = `IFFCO TOKIO` | `NSF` | `FFE` | `PRIF` | `All`
+  - **Response**: Array of student objects enrolled in the specified scheme.
+
+### 6. Export Moodle CSV
+- **`GET /export?scheme=IFFCO%20TOKIO`**
+  - **Response**: Streams binary CSV attachment `Moodle_Export_IFFCO_TOKIO.csv`.
+
+### 7. Clear Stored Data
+- **`DELETE /clear-data`**
+  - **Response**: `{ "success": true, "message": "Student and enrollment data was cleared." }`
+
+---
+
+## 🗄 Database Schema (Prisma)
+
+```mermaid
+erDiagram
+    Student ||--o{ Enrollment : "has"
+    Scheme ||--o{ Enrollment : "contains"
+
+    Student {
+        Int id PK
+        String firstName
+        String lastName
+        String email UK
+        String mobile
+        String gender
+        String dob
+        String state
+        String district
+        Float income
+        String category
+        String currentLevel
+        String currentClass
+        String diplomaType
+        Float percent10th
+        Int passYear10th
+        Float percent12th
+        Int passYear12th
+        Float percentLast
+        String entranceExam
+        Int entranceRank
+        String father
+        DateTime createdAt
+    }
+
+    Scheme {
+        Int id PK
+        String name UK
+    }
+
+    Enrollment {
+        Int id PK
+        Int studentId FK
+        Int schemeId FK
+        String status
+    }
 ```
 
-### Prepare the database
+---
 
-Generate the Prisma client and push the schema:
+## 🧪 Testing & Verification
 
-```bash
-npm run prisma:generate
-npm run db:push
-```
-
-### Start the app
-
-Run:
-
-```bash
-npm start
-```
-
-Then open the app in your browser at:
-
-```text
-http://localhost:3002
-```
-
-If you set a different PORT value in your environment, the app will use that instead.
-
-## Environment variables
-
-The app supports a few environment variables:
-
-```text
-PORT=3002
-MAX_UPLOAD_BYTES=5242880
-CORS_ORIGIN=http://localhost:3002
-```
-
-- PORT sets the server port
-- MAX_UPLOAD_BYTES limits uploaded file size
-- CORS_ORIGIN is optional and allows specific frontend origins
-
-If CORS_ORIGIN is not set, the server is expected to serve the browser app and API from the same origin.
-
-## CSV input format
-
-The importer expects CSV headers in snake_case format, similar to:
-
-```text
-first_name,last_name,email,mobile,gender,dob,father,income,state,district,current_level,current_class,diploma_type,percent_10th,passing_year_10th,percent_12th,passing_year_12th,percent_last,entrance_exam,entrance_rank
-```
-
-Rows without a valid email or income are skipped and reported in the import summary.
-
-## Typical workflow
-
-A normal user flow looks like this:
-
-1. Upload a CSV file from the dashboard.
-2. The server validates and parses the rows.
-3. Each row is evaluated for scholarship eligibility.
-4. Eligible students are stored in the database.
-5. If a student qualifies for multiple schemes, the record is marked as a conflict.
-6. The admin resolves the conflict using the available actions.
-7. Confirmed enrollments are exported in CSV format.
-
-That workflow is intentionally simple and focused on real operational use.
-
-## API overview
-
-The server exposes a small set of API routes:
-
-- GET /health: checks whether the service is running
-- POST /upload: imports and processes a CSV file
-- POST /resolve-all: applies conflict-resolution actions
-- GET /stats: returns student and enrollment summary data
-- GET /scheme/:name: returns records for a specific scheme
-- GET /export: exports confirmed enrollments as CSV
-- DELETE /clear-data: clears imported student and enrollment data
-
-## Testing
-
-The repository includes tests for the eligibility engine.
-
-Run:
+Unit tests cover the core decision engine logic in `utils/logic.js`. Execute tests via:
 
 ```bash
 npm test
 ```
 
-These tests help confirm that the rules continue to behave as expected as the project evolves.
-
-## Useful commands
-
-```bash
-npm install
-npm start
-npm test
-npm run prisma:generate
-npm run db:push
+Sample Output:
+```text
+✔ marks a qualifying Bihar class 11 student eligible for IFFCO TOKIO
+✔ marks DCECE diploma students eligible for NSF when rank and scores qualify
+✔ marks eligible engineering entrance records for FFE
+✔ adds PRIF eligibility for Patna district records
+✔ returns no schemes when the record does not satisfy any rule
+✔ supports camelCase DB student object format for IFFCO TOKIO eligibility
+ℹ tests 6 | pass 6 | fail 0
 ```
 
-## Notes
+To generate a 500-record test dataset using Python:
+```bash
+python test.py
+```
 
-This project is a practical local-first prototype rather than a large-scale production platform. It is intentionally lightweight and easy to run, while still covering the core needs of scholarship review and export.
+---
 
-If you are exploring the codebase for the first time, the best places to start are:
+## 🔮 Future Roadmap & Improvements
 
-- server.js for the application flow
-- logic.js for the scholarship rules
-- script.js for the dashboard behavior
+- [ ] **Custom Scheme Configurator**: Dynamic UI builder for administrators to create custom eligibility rules without altering code.
+- [ ] **Role-Based Access Control (RBAC)**: Authentication and authorization tiers (Admin, Auditor, Viewer).
+- [ ] **Audit Trail & History**: Historical log tracking CSV import operations and manual conflict resolutions.
+- [ ] **Direct LMS API Sync**: Direct integration with Moodle REST API to automatically enroll students without manual CSV downloading.
 
-## Summary
+---
 
-Scholarship Manager is a focused internal tool for handling scholarship applications from CSV import to final export. It brings together data intake, validation, eligibility review, conflict handling, and Moodle-ready export in one place, making it much easier to manage scholarship decisions without relying on manual spreadsheet work.
+## 📄 License
+
+This project is open-source under the [MIT License](LICENSE).

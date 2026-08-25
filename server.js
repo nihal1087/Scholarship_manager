@@ -135,6 +135,8 @@ async function seedSchemes() {
             })
         )
     );
+    const schemes = await prisma.scheme.findMany();
+    return new Map(schemes.map((scheme) => [scheme.name, scheme]));
 }
 
 function resolveSchemeName(value) {
@@ -142,7 +144,7 @@ function resolveSchemeName(value) {
     return SCHEME_LIST.find((name) => name.toLowerCase() === String(value).toLowerCase()) || null;
 }
 
-async function persistEligibleStudent(row, eligibleFor) {
+async function persistEligibleStudent(row, eligibleFor, schemeMap) {
     const student = await prisma.student.upsert({
         where: { email: normalizeEmail(row.email) },
         update: toStudentInput(row),
@@ -150,9 +152,7 @@ async function persistEligibleStudent(row, eligibleFor) {
     });
 
     const status = eligibleFor.length > 1 ? 'CONFLICT' : 'CONFIRMED';
-    const schemes = await prisma.scheme.findMany({
-        where: { name: { in: eligibleFor } },
-    });
+    const schemes = eligibleFor.map((name) => schemeMap.get(name)).filter(Boolean);
 
     await prisma.enrollment.deleteMany({
         where: {
@@ -192,7 +192,7 @@ app.post('/upload', upload.single('file'), asyncRoute(async (req, res) => {
         return res.status(400).json({ error: 'Please attach a CSV file.' });
     }
 
-    await seedSchemes();
+    const schemeMap = await seedSchemes();
 
     let rows = [];
     try {
@@ -226,7 +226,7 @@ app.post('/upload', upload.single('file'), asyncRoute(async (req, res) => {
             continue;
         }
 
-        const status = await persistEligibleStudent(row, eligibleFor);
+        const status = await persistEligibleStudent(row, eligibleFor, schemeMap);
         imported++;
 
         if (status === 'CONFLICT') {

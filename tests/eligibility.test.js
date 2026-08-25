@@ -80,3 +80,18 @@ test('adds PRIF eligibility for Patna district records', () => {
 test('returns no schemes when the record does not satisfy any rule', () => {
     assert.deepEqual(checkEligibility(baseStudent), []);
 });
+
+test('supports camelCase DB student object format for IFFCO TOKIO eligibility', () => {
+    const result = checkEligibility({
+        income: 250000,
+        state: 'Bihar',
+        currentLevel: 'School',
+        currentClass: 'Class 11',
+        percent10th: 72,
+        passYear10th: 2025,
+        percentLast: 72,
+    });
+
+    assert.deepEqual(result, [SCHEME_NAMES.IFFCO_TOKIO]);
+});
+
